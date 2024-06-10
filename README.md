@@ -79,8 +79,6 @@ Estou pressupondo que vão utilizar Windows como sistema operacional.
 
 ## Criar branches
 
-- Quando você fazer alguma alteração, não dar commit na main branch, dar commit em uma branch que foi criada para você. Depois da avaliação ter sido verificada pelo coordenador/gerente e pelos outros membros, pode ser feito uma merge com a main.
-
 - Para criar uma branch: <br>
 **git checkout -b nome_branch**
 
