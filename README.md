@@ -53,7 +53,7 @@ Estou pressupondo que vão utilizar Windows como sistema operacional.
 - Caso você não for colaborador desse repositório, entre no GitHub com esta conta neste repositório, vai em Settings > Collaborators, e convide a sua conta pessoal a ser um editor.
 
 - Para puxar esse repositório para seu computador, abra o terminal no local desejado para colocá-lo, e digite o seguinte comando: <br>
-**git clone https://github.com/vsss-rinobot/mecanica.git**
+**git clone https://github.com/liviaguirao/aee.git**
 
 - Quando você começar a fazer alterações no seu repositório local, é possível comparar as diferenças com o repositório remoto com o comando: <br>
 **git status**
