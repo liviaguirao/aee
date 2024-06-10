@@ -30,15 +30,119 @@ font-family: "Poppins", sans-serif;
 
 ## Primeira Configuração
 
-* Pelo terminal entre na pasta onde irá guardar o projeto: cd /caminho/para/a/pasta
+Esse manual vai listar os comandos a serem utilizados para facilitar o manuseio do Git e GitHub.
 
-* Crie um clone do repositório: `git clone https://github.com/link-do-repositorio`
+Estou pressupondo que vão utilizar Windows como sistema operacional.
 
-* Entre na pasta criada pelo comando clone: cd /caminho/para/a/pasta/nova
+## Pré requisitos
 
-* Crie sua branch usando como o padrão o nome da feature que você está a desenvolver: `git checkout -b nome_da_feature`
+- Donwloado do [Git](https://git-scm.com/download/win).
 
-* Após criada a branch você será redirecionado automaticamente a ela, neste espaço que você desenvolverá sua parte do projteto
+## Primeira vez abrindo o terminal
+
+- Para abrir o terminal, clique com o botão direito em algum diretório já aberto do seu computador, e abra o Git Bash.
+
+- É preciso configurar as informações do usuário, no caso você: <br>
+**git config --global user.name "Seu nome"** <br>
+**git config --global user.email "Seu email"**
+
+- Às vezes quando for dado o primeiro comando de git, talvez será aberto uma aba no seu navegador para sincronizar com a sua conta pessoal no github.
+
+## Repositório Remoto &#8594; Repositório Local
+
+- Caso você não for colaborador desse repositório, entre no GitHub com esta conta neste repositório, vai em Settings > Collaborators, e convide a sua conta pessoal a ser um editor.
+
+- Para puxar esse repositório para seu computador, abra o terminal no local desejado para colocá-lo, e digite o seguinte comando: <br>
+**git clone https://github.com/liviaguirao/aee.git**
+
+- Quando você começar a fazer alterações no seu repositório local, é possível comparar as diferenças com o repositório remoto com o comando: <br>
+**git status**
+
+- Depois de já ter um repositório local para o remoto, e queira atualizar ele, usar o comando: <br>
+**git pull**
+
+## Repositório Local &#8594; Repositório Remoto
+
+- Quando você estiver satisfeito com as mudanças, e queira atualizar seu repositório remoto, usar os seguintes comandos:
+
+<ul type=circle>
+  <li> Para registrar todas as mudanças na fila de submissão: <br>
+  <b>git add .</b>
+  <br>OU
+  <li> Para registrar apenas mudanças de arquivos específicos: <br>
+  <b>git add nome_arquivo.tipo </b>
+  <li> O commit vai adicionar essas alterações da fila no repositório, usando: <br>
+  <b>git commit -m 'Mensagem rápida sobre o commit'</b>
+  <li> Finalmente, para enviar o commit ao repositório remoto: <br>
+  <b>git push</b>
+</ul>
+
+## Criar branches
+
+- Para criar uma branch: <br>
+**git checkout -b nome_branch**
+
+- Para mudar de branch: <br>
+**git checkout nome_branch**
+
+- Para fazer um merge com a main, primeiro entrar nela, depois dar o comando: <br>
+**git merge ramificacao_a_ser_mesclada**
+
+- Para de fato enviar a alteração, dar: <br>
+**git push**
+
+## Desfazer comandos
+
+- Para desfazer alterações em um arquivo: <br>
+**git restore nome_arquivo.tipo**
+
+- Para desfazer um *add*: <br>
+**git restore --staged nome_arquivo.tipo**
+
+- Para desfazer um commit antes do push: <br>
+**git revert HEAD** <br>
+OBS: será aberto um arquivo, mas apenas feche ele
+
+- Para desfazer um commit depois de ter dado push: <br>
+ <ul type=circle>
+    <li> Primeiro é preciso acessar o histórico de commits e pegar o código daquele que você quer desfazer: <br>
+    <b> git log --pretty=oneline </b>
+    <li> Depois de pegar o código, para reverter basta usar: <br>
+    <b> git revert fcdaecdf39aa6cd6c5a24d450ccc927b460ead3a </b> <br>
+    OBS: será aberto um arquivo, mas apenas feche ele
+ </ul>
+
+## Como voltar para uma versão anterior
+
+- Na página principal do repositório, vai ter uma aba "commits", e lá vai ter o hitórico dos commmits.
+
+- Ao abrir ela, na frente de cada commit, tem um botão "<>". Ao clicar nele, você vai pro repositório na época daquele commit.
+
+- Se você quiser recuperar essa versão, baixe ela .zip indo no botão "code". Depois de extrair, jogue ela para seu repositório local e faça commit normalmente.
+
+## Ações com diretórios usando o terminal
+
+- As vezes será necessário navegar entre os diretórios via terminal, alguns comandos interessantes são:
+
+<ul type=circle>
+  <li> Para ir ao diretório indicado: <br>
+  <b> cd nome_diretorio </b>
+  <li> Para voltar um diretório: <br>
+  <b> cd .. </b>
+  <li> Para listar os diretórios e arquivos do diretório atual: <br>
+  <b> ls </b>
+  <li> Para criar um diretório: <br>
+  <b> mkdir nome_diretorio </b>
+  <li> Para criar um arquivo qualquer: <br>
+  <b> touch nome_arquivo.tipo </b>
+  <li> Para remover um diretório vazio: <br>
+  <b> rmdir nome_diretorio </b>
+  <li> Para remover um diretório e tudo que tem dentro dele: <br>
+  <b> rm -r nome_diretorio </b>
+  <li> Para remover um arquivo: <br>
+  <b> rm arquivo.tipo </b>
+</ul>
+
 ## Rotina
 
 * Para executar o site: `npm run dev` e siga a rota fornecida.
