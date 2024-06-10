@@ -1,9 +1,8 @@
 
 # **Modelagem de sistemas 2024.1**
 
-# **A&E**
 <p align="left">
-  <img src="https://github.com/liviaguirao/aee/tree/main/src/assets/logo-completa.png&width=800&height=auto&aspect=true" alt="jogo genius" width="30%">
+  <img src="https://github.com/liviaguirao/aee/blob/main/src/assets/logo%20completa.png" width="50%">
 </p>
 
 O site é uma plataforma social inovadora projetada para conectar artistas e eventos. Aqui, artistas têm a oportunidade de divulgar seus trabalhos, enquanto estabelecimentos podem promover seus eventos. Funciona como uma rede social, permitindo uma interação dinâmica e colaborativa entre criadores e organizadores. Além disso, nossa plataforma é ideal para ajudar na carreira de novos artistas, oferecendo visibilidade e oportunidades de networking, facilitando a descoberta e o engajamento em eventos culturais e artísticos.
