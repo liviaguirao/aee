@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Criar_publicacao />} />
+        <Route path="/criar" element={<Criar_publicacao />} />
         <Route path="/filtros" element={<Sel_filtros />} />
         <Route path="/filtro_artista" element={<Filtro_artista />} />
         <Route path="/filtro_evento" element={<Filtro_evento />} />

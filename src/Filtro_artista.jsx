@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 function Filtro_artista() {
-  const [count, setCount] = useState(0)
+    const navigate = useNavigate();
+
+    function handleFilterClick_criar() {
+      navigate('/criar'); 
+    }
 
   return (
     <>
@@ -48,10 +50,10 @@ function Filtro_artista() {
         <div style={{width: 30.86, height: 27.26, left: 37, top: 170.03, position: 'absolute', background: 'black'}}></div>
         <div style={{width: 48, height: 19, left: 32, top: 608, position: 'absolute'}}>
             <div style={{width: 48, height: 19, left: 0, top: 0, position: 'absolute', background: '#820B8A', borderRadius: 13}} />
-            <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word'}}>Sair</div>
+            <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Sair</div>
         </div>
         <div style={{width: 211, height: 76, left: 937, top: 434, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-        <div style={{width: 127, height: 29, left: 979, top: 457, position: 'absolute', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Finalizar</div>
+        <div style={{width: 127, height: 29, left: 979, top: 457, position: 'absolute', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_criar}>Finalizar</div>
         <div style={{width: 356, height: 41, left: 192, top: 56, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 304, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 355, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />

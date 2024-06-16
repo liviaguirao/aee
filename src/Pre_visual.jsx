@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 function Pre_visual() {
-  const [count, setCount] = useState(0)
+    const navigate = useNavigate();
 
+    function handleFilterClick_criar() {
+      navigate('/criar'); 
+    }
   return (
     <>
       <div style={{width: 1440, height: 653, position: 'relative', background: 'white'}}>
@@ -48,12 +49,12 @@ function Pre_visual() {
       <div style={{width: 30.86, height: 27.26, left: 38, top: 170.03, position: 'absolute', background: 'black'}}></div>
       <div style={{width: 48, height: 19, left: 32, top: 608, position: 'absolute'}}>
         <div style={{width: 48, height: 19, left: 0, top: 0, position: 'absolute', background: '#820B8A', borderRadius: 13}} />
-        <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word'}}>Sair</div>
+        <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Sair</div>
       </div>
       <div style={{width: 211, height: 76, left: 1092, top: 512, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-      <div style={{width: 127, height: 29, left: 1134, top: 535, position: 'absolute',  display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Cancelar</div>
+      <div style={{width: 127, height: 29, left: 1134, top: 535, position: 'absolute',  display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_criar}>Cancelar</div>
       <div style={{width: 211, height: 75.96, left: 1092, top: 60, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-      <div style={{width: 117, height: 45, left: 1139, top: 76, position: 'absolute',  display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Publicar</div>
+      <div style={{width: 117, height: 45, left: 1139, top: 76, position: 'absolute',  display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Publicar</div>
       <div style={{width: 698, height: 537, left: 237, top: 51, position: 'absolute'}}>
         <div style={{width: 698, height: 537, left: 0, top: 0, position: 'absolute', background: 'white', borderRadius: 17, border: '2px #820B8A solid'}} />
         <div style={{width: 255.19, height: 26.24, left: 10.09, top: 491.58, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>venha para meu evento</div>
