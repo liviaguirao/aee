@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 import './App.css'
 
 function Pre_visual() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const texto = location.state?.texto;
 
     function handleFilterClick_criar() {
       navigate('/'); 
@@ -57,7 +60,12 @@ function Pre_visual() {
       <div style={{width: 117, height: 45, left: 1139, top: 76, position: 'absolute',  display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Publicar</div>
       <div style={{width: 698, height: 537, left: 237, top: 51, position: 'absolute'}}>
         <div style={{width: 698, height: 537, left: 0, top: 0, position: 'absolute', background: 'white', borderRadius: 17, border: '2px #820B8A solid'}} />
-        <div style={{width: 255.19, height: 26.24, left: 10.09, top: 491.58, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>venha para meu evento</div>
+        <div style={{width: 255.19, height: 26.24, left: 10.09, top: 491.58, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}></div>
+        <div style={{width: 670, height: 1, left: 10, top: 480, position: 'absolute', textAlign: 'left', color: 'black', fontSize: 24, fontFamily: 'Inter', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>
+          <p>
+            {texto}
+          </p>
+        </div>
         <img style={{width: 62.54, height: 62.58, left: 10.09, top: 5.05, position: 'absolute', borderRadius: 9999}} src="https://via.placeholder.com/63x63" />
         <img style={{width: 693.97, height: 401.74, left: 2.02, top: 78.73, position: 'absolute', borderRadius: 17}} src="https://via.placeholder.com/694x402" />
       </div>
