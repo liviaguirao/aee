@@ -5,7 +5,7 @@ function Filtro_evento() {
     const navigate = useNavigate();
 
     function handleFilterClick_criar() {
-      navigate('/criar'); 
+      navigate('/'); 
     }
 
   return (

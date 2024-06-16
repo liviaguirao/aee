@@ -5,7 +5,7 @@ function Pre_visual() {
     const navigate = useNavigate();
 
     function handleFilterClick_criar() {
-      navigate('/criar'); 
+      navigate('/'); 
     }
   return (
     <>
