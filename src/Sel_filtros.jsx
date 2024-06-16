@@ -1,10 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
+
 function Sel_filtros() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
+
+  function handleFilterClick_artista() {
+    navigate('/filtro_artista'); 
+  }
+
+  function handleFilterClick_evento() {
+    navigate('/filtro_evento'); 
+  }
 
   return (
     <>
@@ -48,13 +55,13 @@ function Sel_filtros() {
         <div style={{width: 30.86, height: 27.26, left: 38, top: 170.03, position: 'absolute', background: 'black'}}></div>
         <div style={{width: 48, height: 19, left: 32, top: 608, position: 'absolute'}}>
           <div style={{width: 48, height: 19, left: 0, top: 0, position: 'absolute', background: '#820B8A', borderRadius: 13}} />
-          <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word'}}>Sair</div>
+          <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Sair</div>
         </div>
         <div style={{left: 279, top: 67, position: 'absolute', textAlign: 'center', color: 'black', fontSize: 60, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Você é um artista ou um evento?</div>
         <div style={{width: 211, height: 76, left: 360, top: 327, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-        <div style={{width: 127, height: 29, left: 405, top: 350, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Artista</div>
+        <div style={{width: 127, height: 29, left: 405, top: 350, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_artista}>Artista</div>
         <div style={{width: 211, height: 76, left: 865, top: 327, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-        <div style={{width: 127, height: 29, left: 914, top: 350, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Evento</div>
+        <div style={{width: 127, height: 29, left: 914, top: 350, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_evento}>Evento</div>
         </div>
     </>
   )

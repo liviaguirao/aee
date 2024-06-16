@@ -1,10 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
+
 function Criar_publicacao() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
+
+  function handleFilterClick_filtros() {
+    navigate('/filtros'); // Navega para o arquivo Sel_filtros.jsx
+  }
+
+  function handleFilterClick_pre() {
+    navigate('/pre_visual'); // Navega para o arquivo Pre_visual.jsx
+  }
+
 
   return (
     <>
@@ -48,18 +56,18 @@ function Criar_publicacao() {
       <div style={{width: 27.02, height: 23.87, left: 40, top: 173, position: 'absolute', background: 'black'}}></div>
       <div style={{width: 900, height: 467, left: 203, top: 97, position: 'absolute', background: 'white', borderRadius: 15, border: '5px #820B8A solid'}} />
       <div style={{width: 258, height: 76, left: 1135, top: 97, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-      <div style={{width: 228, height: 36, left: 1150, top: 117, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Anexar arquivos<br/></div>
+      <div style={{width: 228, height: 36, left: 1150, top: 117, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Anexar arquivos<br/></div>
       <div style={{left: 248, top: 120, position: 'absolute', color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Escrever...</div>
       <div style={{width: 258, height: 76, left: 1135, top: 195, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}} />
       <div style={{width: 258, height: 76, left: 1135, top: 488, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}} />
       <div style={{width: 258, height: 76, left: 1135, top: 293, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
       <div style={{width: 48, height: 19, left: 32, top: 608, position: 'absolute'}}>
         <div style={{width: 48, height: 19, left: 0, top: 0, position: 'absolute', background: '#820B8A', borderRadius: 13}} />
-        <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word'}}>Sair</div>
+        <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Sair</div>
       </div>
-      <div style={{width: 258, height: 76, left: 1135, top: 293, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Pré-visualizar</div>
-      <div style={{left: 1230, top: 210, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Filtros</div>
-      <div style={{width: 127, height: 29, left: 1200, top: 510, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Cancelar</div>
+      <div style={{width: 258, height: 76, left: 1135, top: 293, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_pre}>Pré-visualizar</div>
+      <div style={{left: 1230, top: 210, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}} onClick={handleFilterClick_filtros} >Filtros</div>
+      <div style={{width: 127, height: 29, left: 1200, top: 510, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', cursor: 'pointer'}}>Cancelar</div>
     </div>
     </>
   )
