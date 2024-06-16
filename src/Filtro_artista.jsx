@@ -48,20 +48,20 @@ function Filtro_artista() {
         <div style={{width: 30.86, height: 27.26, left: 37, top: 170.03, position: 'absolute', background: 'black'}}></div>
         <div style={{width: 48, height: 19, left: 32, top: 608, position: 'absolute'}}>
             <div style={{width: 48, height: 19, left: 0, top: 0, position: 'absolute', background: '#820B8A', borderRadius: 13}} />
-            <div style={{left: 11, top: 4, position: 'absolute', textAlign: 'right', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>sair</div>
+            <div style={{width: 48, height: 19, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', color: 'white', fontSize: 14, fontFamily: 'Manjari', fontWeight: '400', wordWrap: 'break-word'}}>Sair</div>
         </div>
         <div style={{width: 211, height: 76, left: 937, top: 434, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
-        <div style={{width: 127, height: 29, left: 979, top: 457, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Finalizar</div>
+        <div style={{width: 127, height: 29, left: 979, top: 457, position: 'absolute', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>Finalizar</div>
         <div style={{width: 356, height: 41, left: 192, top: 56, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 304, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 355, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 406, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
         <div style={{width: 356, height: 41, left: 192, top: 457, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-        <div style={{left: 208, top: 64, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>tipo de artista</div>
-        <div style={{left: 207, top: 315, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>país</div>
-        <div style={{left: 206, top: 363, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>estado</div>
-        <div style={{left: 205, top: 417, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>cidade</div>
-        <div style={{left: 203, top: 468, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>gênero</div>
+        <div style={{left: 208, top: 59, position: 'absolute', textAlign: 'right', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>tipo de artista</div>
+        <div style={{left: 208, top: 308, position: 'absolute', textAlign: 'right', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>país</div>
+        <div style={{left: 208, top: 358, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>estado</div>
+        <div style={{left: 208, top: 410, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>cidade</div>
+        <div style={{left: 208, top: 460, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>gênero</div>
         <div style={{width: 24, height: 24, left: 532, top: 90, position: 'absolute', transform: 'rotate(-180deg)', transformOrigin: '0 0'}}>
             <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
         </div>

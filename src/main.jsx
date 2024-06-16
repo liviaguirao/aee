@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Sel_filtros.jsx'
+import App from './Filtro_artista.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
