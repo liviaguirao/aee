@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Criar_publicacao.jsx'
+import App from './Pre_visual.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
