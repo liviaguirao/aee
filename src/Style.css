@@ -103,4 +103,108 @@
     left: 1135px;
     top: 488px;
   }
+
+  .button-cancelar-pre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    background: #820B8A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: 1px black solid;
+    position: absolute;
+    width: 258px;
+    height: 76px;
+    left: 1092px;
+    top: 512px;
+  }
   
+  .button-finalizar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    background: #820B8A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: 1px black solid;
+    position: absolute;
+    width: 258px;
+    height: 76px;
+    left: 937px;
+    top: 434px;
+  }
+
+  .button-artista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    background: #820B8A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: 1px black solid;
+    position: absolute;
+    width: 258px;
+    height: 76px;
+    left: 360px;
+    top: 327px;
+  }
+
+  .button-evento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    background: #820B8A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: 1px black solid;
+    position: absolute;
+    width: 258px;
+    height: 76px;
+    left: 865px;
+    top: 327px;
+  }
+
+  .button-publicar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    background: #820B8A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: 1px black solid;
+    position: absolute;
+    width: 258px;
+    height: 76px;
+    left: 1092px;
+    top: 60px;
+  }
