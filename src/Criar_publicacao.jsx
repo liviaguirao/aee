@@ -2,11 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css'
 import './Style.css'
+import { useImage } from './ImageContext';
 
 
 function Criar_publicacao() {
   const navigate = useNavigate();
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [imagem, setImagem] = useState(null);;
   const fileInputRef = useRef(null);
   const [texto, setTexto] = useState('');
 
@@ -28,13 +29,17 @@ function Criar_publicacao() {
     }
   }, []);
 
-  const handleFileSelect = (event) => {
-    setSelectedFile(event.target.files[0]);
-    if (file) {
-      setSelectedFile(file);
-      // Opcional: Salvar o arquivo ou informações do arquivo em armazenamento persistente
-      // Por exemplo, salvar o nome do arquivo no localStorage
-      localStorage.setItem('selectedFileName', file.name);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file && file.type.substr(0, 5) === "image") {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagem(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImagem(null);
     }
   };
 
@@ -45,13 +50,10 @@ function Criar_publicacao() {
   };
 
   useEffect(() => {
-    const fileName = localStorage.getItem('selectedFileName');
-    if (fileName) {
-      // Aqui você precisaria de uma maneira de recuperar o arquivo real baseado no nome,
-      // o que pode ser complexo se o arquivo em si foi armazenado.
-      // Este exemplo apenas recupera e exibe o nome do arquivo.
-      console.log(`Arquivo recuperado: ${fileName}`);
-      // Atualizar o estado ou lógica para lidar com o arquivo recuperado
+    // Tentar recuperar a imagem do localStorage ao carregar o componente
+    const imagemSalva = localStorage.getItem('imagemSelecionada');
+    if (imagemSalva) {
+      setImagem(imagemSalva);
     }
   }, []);
 
@@ -89,7 +91,7 @@ function Criar_publicacao() {
   }
 
   function handleFilterClick_pre() {
-    navigate('/pre_visual', { state: { texto } }); 
+    navigate('/pre_visual', { state: { texto, imagem } }); 
   }
 
 
@@ -107,7 +109,7 @@ function Criar_publicacao() {
         type='file'
         ref={fileInputRef}
         style={{display: 'none'}}
-        onChange={handleFileSelect}
+        onChange={handleImageChange}
         accept="image/jpeg, image/png"
       />
       <textarea 

@@ -6,7 +6,7 @@ import './Style.css'
 function Pre_visual() {
     const navigate = useNavigate();
     const location = useLocation();
-    const texto = location.state?.texto;
+    const { texto, imagem } = location.state || {}; // Recupera o texto e a imagem do estado
 
     function handleFilterClick_cancelar() {
       navigate('/'); 
@@ -23,7 +23,6 @@ function Pre_visual() {
   return (
     <>
       <div style={{width: 1440, height: 653, position: 'relative', background: 'white'}}>
-      
       <Button
           text="Sair"
           // onClick={handleSairClick} // Substitua handleSairClick pela função que lida com o clique do botão
@@ -48,7 +47,7 @@ function Pre_visual() {
           </p>
         </div>
         <img style={{width: 62.54, height: 62.58, left: 10.09, top: 5.05, position: 'absolute', borderRadius: 9999}} src="https://via.placeholder.com/63x63" />
-        <img style={{width: 693.97, height: 401.74, left: 2.02, top: 78.73, position: 'absolute', borderRadius: 17}} src="https://via.placeholder.com/694x402" />
+        {imagem && <img src={imagem} alt="Imagem selecionada" style={{position: 'absolute', zIndex: 1000, width: 694, height: 402, left: 2.02, top: 78.73}} />}
       </div>
     </div>
     </>
