@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css'
 import './Style.css'
 
@@ -7,11 +7,35 @@ import './Style.css'
 function Criar_publicacao() {
   const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
-  const fileInputRef = React.createRef();
+  const fileInputRef = useRef(null);
   const [texto, setTexto] = useState('');
+
+  const handleTextChange = (event) => {
+    const novoTexto = event.target.value;
+    setTexto(novoTexto);
+    // Salvar o texto no localStorage
+    localStorage.setItem('textoPublicacao', novoTexto);
+  };
+
+  const triggerFileInput = () => {
+    fileInputRef.current.click();
+  };
+
+  useEffect(() => {
+    const textoSalvo = localStorage.getItem('textoPublicacao');
+    if (textoSalvo) {
+      setTexto(textoSalvo);
+    }
+  }, []);
 
   const handleFileSelect = (event) => {
     setSelectedFile(event.target.files[0]);
+    if (file) {
+      setSelectedFile(file);
+      // Opcional: Salvar o arquivo ou informações do arquivo em armazenamento persistente
+      // Por exemplo, salvar o nome do arquivo no localStorage
+      localStorage.setItem('selectedFileName', file.name);
+    }
   };
 
   const [showPopup, setShowPopup] = useState(false);
@@ -20,13 +44,17 @@ function Criar_publicacao() {
     setShowPopup(false);
   };
 
-  const triggerFileInput = () => {
-    fileInputRef.current.click();
-  };
-  
-  const handleTextChange = (event) => {
-    setTexto(event.target.value);
-  };
+  useEffect(() => {
+    const fileName = localStorage.getItem('selectedFileName');
+    if (fileName) {
+      // Aqui você precisaria de uma maneira de recuperar o arquivo real baseado no nome,
+      // o que pode ser complexo se o arquivo em si foi armazenado.
+      // Este exemplo apenas recupera e exibe o nome do arquivo.
+      console.log(`Arquivo recuperado: ${fileName}`);
+      // Atualizar o estado ou lógica para lidar com o arquivo recuperado
+    }
+  }, []);
+
 
   const Button = ({ text, onClick, style, className }) => {
     return (
@@ -80,9 +108,15 @@ function Criar_publicacao() {
         ref={fileInputRef}
         style={{display: 'none'}}
         onChange={handleFileSelect}
+        accept="image/jpeg, image/png"
       />
-      <textarea style={{left: 248, top: 120, position: 'absolute', width: 800, height: 450, color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', background:'transparent', border: 'none', outline: 'none', resize: 'none', overflow:'hidden'}}placeholder='Escreva aqui' autoFocus value={texto} onChange={handleTextChange}/>
-      <div style={{width: 258, height: 76, left: 1135, top: 195, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}} />
+      <textarea 
+          style={{left: 248, top: 120, position: 'absolute', width: 800, height: 450, color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', background:'transparent', border: 'none', outline: 'none', resize: 'none', overflow:'hidden'}}
+          placeholder='Escreva aqui' 
+          autoFocus 
+          value={texto} 
+          onChange={handleTextChange}
+        />
       <div style={{width: 258, height: 76, left: 1135, top: 488, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}} />
       <div style={{width: 258, height: 76, left: 1135, top: 293, position: 'absolute', background: '#820B8A', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 40, border: '1px black solid'}}></div>
       
