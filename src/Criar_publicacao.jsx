@@ -14,6 +14,12 @@ function Criar_publicacao() {
     setSelectedFile(event.target.files[0]);
   };
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   const triggerFileInput = () => {
     fileInputRef.current.click();
   };
@@ -30,12 +36,32 @@ function Criar_publicacao() {
     );
   };
 
+  const Popup = ({ onClose }) => (
+    <div className="popup-background">
+      <div className="popup-container">
+        <p>Tem certeza que deseja cancelar?</p>
+        <div className="buttons-container"> {/* Contêiner flexível para os botões */}
+          <Button
+            text="Sim"
+            onClick={onClose} 
+            className="pop-yes-button"
+          />
+          <Button
+            text="Não"
+            onClick={onClose}
+            className="pop-no-button"
+          />
+        </div>
+      </div>
+    </div>
+  );
+
   function handleFilterClick_filtros() {
-    navigate('/filtros'); // Navega para o arquivo Sel_filtros.jsx
+    navigate('/filtros'); 
   }
 
   function handleFilterClick_pre() {
-    navigate('/pre_visual', { state: { texto } }); // Navega para o arquivo Pre_visual.jsx
+    navigate('/pre_visual', { state: { texto } }); 
   }
 
 
@@ -80,9 +106,10 @@ function Criar_publicacao() {
 
       <Button
         text="Cancelar"
-        // onClick={handleCancelarClick} // Substitua handleCancelarClick pela função que lida com o clique do botão
+        onClick={() => setShowPopup(true)} 
         className="button-cancelar"
       />
+      {showPopup && <Popup onClose={handleClosePopup} />}
     </div>
     </>
   )

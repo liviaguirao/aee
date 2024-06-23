@@ -13,6 +13,10 @@ function Sel_filtros() {
     navigate('/filtro_evento'); 
   }
 
+  function handleFilterClick_voltar() {
+    navigate('/');
+  }
+
   const Button = ({ text, onClick, style, className }) => {
     return (
       <div className={`button-base ${className}`} style={{ ...style }} onClick={onClick}>
@@ -39,6 +43,11 @@ function Sel_filtros() {
           text="Evento"
           onClick={handleFilterClick_evento}
           className={ 'button-evento'}
+        />
+        <Button
+          text="Voltar"
+          onClick={handleFilterClick_voltar}
+          className="button-voltar"
         />
         </div>
     </>
