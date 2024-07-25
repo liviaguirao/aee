@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import styles from "./App.module.css";
+import { motion } from 'framer-motion';
+import logo from './assets/logo-completa.png'; // Caminho relativo ao arquivo atual
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Email:', email);
+    console.log('Senha:', senha);
+    // Aqui você pode adicionar a lógica de autenticação
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={styles.app}>
+      <div className={styles.loginContainer}>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <label htmlFor="senha">Senha:</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
+          <div className={styles.ContainersubmitButton}>
+            <input className={styles.submitButton} type="submit" value="entrar" />
+          </div>
+        </form>
+        <div className={styles.OU}>
+          <div className={styles.linha}></div>
+          <h5>ou</h5>
+          <div className={styles.linha}></div>
+        </div>
+        <motion.button className={styles.BotaoCriarConta} onClick={handleSubmit}>
+          criar conta
+        </motion.button>
+
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className={styles.container}>
+        <img src={logo} alt="Logo" />
+        <p className={styles.escrito1}>Encontre o artista perfeito para o seu evento.  E artista, mostre seu talento para o mundo!</p>
+        <p className={styles.escrito2}>Se conectem para criar experiências memoráveis.</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
