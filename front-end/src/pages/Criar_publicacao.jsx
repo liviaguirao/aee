@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './Style.css';
+import Navbar from './navbar';
 
 function Criar_publicacao() {
   const navigate = useNavigate();
@@ -13,7 +14,6 @@ function Criar_publicacao() {
   const handleTextChange = (event) => {
     const novoTexto = event.target.value;
     setTexto(novoTexto);
-    // Salvar o texto no sessionStorage
     sessionStorage.setItem('textoPublicacao', novoTexto);
   };
 
@@ -22,7 +22,6 @@ function Criar_publicacao() {
   };
 
   useEffect(() => {
-    // Recuperar o texto salvo no sessionStorage ao carregar o componente
     const textoSalvo = sessionStorage.getItem('textoPublicacao');
     if (textoSalvo) {
       setTexto(textoSalvo);
@@ -39,7 +38,7 @@ function Criar_publicacao() {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagem(reader.result);
-        sessionStorage.setItem('imagemSelecionada', reader.result); // Salva a imagem no sessionStorage
+        sessionStorage.setItem('imagemSelecionada', reader.result);
       };
       reader.readAsDataURL(file);
     } else {
@@ -48,7 +47,6 @@ function Criar_publicacao() {
   };
 
   const handleCancel = () => {
-    // Limpar sessionStorage e resetar estados
     sessionStorage.removeItem('textoPublicacao');
     sessionStorage.removeItem('imagemSelecionada');
     setTexto('');
@@ -60,13 +58,11 @@ function Criar_publicacao() {
     setShowPopup(false);
   };
 
-  const Button = ({ text, onClick, className }) => {
-    return (
-      <div className={`button-base ${className}`} onClick={onClick}>
-        {text}
-      </div>
-    );
-  };
+  const Button = ({ text, onClick, className }) => (
+    <div className={`button-base ${className}`} onClick={onClick}>
+      {text}
+    </div>
+  );
 
   const Popup = ({ onConfirm, onClose }) => (
     <div className="popup-background">
@@ -90,8 +86,8 @@ function Criar_publicacao() {
 
   return (
     <>
-      <div style={{ width: 1440, height: 653, position: 'relative', background: 'white' }}>
-        <div style={{ width: 900, height: 467, left: 203, top: 97, position: 'absolute', background: 'white', borderRadius: 15, border: '5px #820B8A solid' }} />
+      <div style={{ width: '88vw', height: '90vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: 15 }}>
+        <div style={{ width: '65%', height: '70%', margin: 'auto', position: 'absolute', top: '14%', left: '10%', background: 'white', borderRadius: 15, border: '5px #820B8A solid' }} />
         <Button text="Anexar arquivos" onClick={triggerFileInput} className="button-anexar" />
         <input
           type="file"
@@ -101,7 +97,7 @@ function Criar_publicacao() {
           accept="image/jpeg, image/png"
         />
         <textarea
-          style={{ left: 248, top: 120, position: 'absolute', width: 800, height: 450, color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word', background: 'transparent', border: 'none', outline: 'none', resize: 'none', overflow: 'hidden' }}
+          style={{ width: '75%', height: '65%', position: 'absolute', top: '15%', left: '12%', color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', background: 'transparent', border: 'none', outline: 'none', resize: 'none', overflow: 'hidden' }}
           placeholder="Escreva aqui"
           autoFocus
           value={texto}
