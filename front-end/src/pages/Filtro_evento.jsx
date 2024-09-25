@@ -93,8 +93,8 @@ function Filtro_Evento() {
           {/* Filtro principal */}
           <div 
             style={{ 
-              width: 356, 
-              height: 41, 
+              width: '30vw', 
+              height: '6vh', 
               position: 'relative', 
               background: 'rgba(255, 0, 84, 0.19)', 
               borderRadius: 16, 
@@ -102,7 +102,8 @@ function Filtro_Evento() {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              padding: '0 20px'
+              left: '2vw',
+              padding: '0 1vw'
             }} 
             onClick={() => handleExpandFilter(filter.label)}
           >
@@ -120,15 +121,15 @@ function Filtro_Evento() {
               style={{
                 marginLeft: 20,
                 marginTop: 10,
-                padding: '10px 0',
+                padding: '0.5vw 0',
                 background: 'rgba(255, 0, 84, 0.1)', 
                 borderRadius: 8,
-                width: 'calc(100% - 40px)',
+                width: 'calc(60vw)',
               }}
             >
               {filter.label === 'País' ? (
                 filter.options.map((option, idx) => (
-                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                  <div key={idx} style={{ marginBottom: '1vh', display: 'flex', alignItems: 'center' }}>
                     <input 
                       type="radio" 
                       id={`country-${option}`} 
@@ -141,14 +142,14 @@ function Filtro_Evento() {
                         setSelectedCities([]); // Resetar cidades ao mudar de país
                       }} 
                     />
-                    <label htmlFor={`country-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                    <label htmlFor={`country-${option}`} style={{ marginLeft: '1vw', fontSize: '100%' }}>
                       {option}
                     </label>
                   </div>
                 ))
               ) : filter.label === 'Estado' ? (
                 filter.options.map((option, idx) => (
-                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                  <div key={idx} style={{ marginBottom: '1vh', display: 'flex', alignItems: 'center' }}>
                     <input 
                       type="radio" 
                       id={`state-${option}`} 
@@ -160,14 +161,14 @@ function Filtro_Evento() {
                         setSelectedCities([]); // Resetar cidades ao mudar de estado
                       }} 
                     />
-                    <label htmlFor={`state-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                    <label htmlFor={`state-${option}`} style={{ marginLeft: '1vw', fontSize: '100%' }}>
                       {option}
                     </label>
                   </div>
                 ))
               ) : filter.label === 'Cidade' ? (
                 filter.options.map((option, idx) => (
-                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                  <div key={idx} style={{ marginBottom: '1vh', display: 'flex', alignItems: 'center' }}>
                     <input 
                       type="radio" 
                       id={`city-${option}`} 
@@ -178,14 +179,15 @@ function Filtro_Evento() {
                         setSelectedCities(e.target.value); // Resetar cidades ao mudar de estado
                       }} 
                     />
-                    <label htmlFor={`city-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                    <label htmlFor={`city-${option}`} style={{ marginLeft: '1vw', fontSize: '100%' }}>
                       {option}
                     </label>
                   </div>
                 ))
               ) : filter.label === 'Data' ? (
-                <div style={{ marginTop: 10, display: 'flex', justifyContent: 'flex-start' }}>
+                <div style={{ marginTop: '1vh', display: 'flex', justifyContent: 'flex-start' }}>
                   <DatePicker
+                    top='1vh'
                     selected={selectedDate}
                     onChange={(date) => setSelectedDate(date)}
                     dateFormat="dd/MM/yyyy"

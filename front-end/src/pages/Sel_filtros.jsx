@@ -27,13 +27,13 @@ function Sel_filtros() {
 
   return (
     <>
-      <div style={{width: 1440, height: 653, position: 'relative', background: 'white'}}>
+      <div style={{width: '100vw', height: '100vh', position: 'relative', background: 'white'}}>
         <Button
           text="Sair"
           // onClick={handleSairClick} // Substitua handleSairClick pela função que lida com o clique do botão
           className="button-sair"
         />
-        <div style={{left: 279, top: 67, position: 'absolute', textAlign: 'center', color: 'black', fontSize: 60, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Você é um artista ou um evento?</div>
+        <div style={{left: '23vw', top: '10vh', position: 'absolute', textAlign: 'center', color: 'black', fontSize: '400%', fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Você é um artista ou um evento?</div>
         <Button
           text="Artista"
           onClick={handleFilterClick_artista}
