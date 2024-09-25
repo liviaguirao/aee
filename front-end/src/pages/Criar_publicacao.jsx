@@ -86,9 +86,9 @@ function Criar_publicacao() {
 
   return (
     <>
-      <div style={{ width: '100vw', height: '100vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: 15 }}>
+      <div style={{ width: '100vw', height: '100vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: '2vh' }}>
         <Navbar />
-        <div style={{ width: '65%', height: '70%', margin: 'auto', position: 'absolute', top: '14%', left: '10%', background: 'white', borderRadius: 15, border: '5px #820B8A solid' }} />
+        <div style={{ width: '65%', height: '70%', margin: 'auto', position: 'absolute', top: '14%', left: '10%', background: 'white', borderRadius: '2vh', border: '0.8vh #820B8A solid' }} />
         <Button text="Anexar arquivos" onClick={triggerFileInput} className="button-anexar" />
         <input
           type="file"
@@ -98,7 +98,7 @@ function Criar_publicacao() {
           accept="image/jpeg, image/png"
         />
         <textarea
-          style={{ width: '75%', height: '65%', position: 'absolute', top: '15%', left: '12%', color: 'black', fontSize: 30, fontFamily: 'Inter', fontWeight: '400', background: 'transparent', border: 'none', outline: 'none', resize: 'none', overflow: 'hidden' }}
+          style={{ width: '63vw', height: '65vh', position: 'absolute', top: '15vh', left: '11vw', color: 'black', fontSize: '150%', fontFamily: 'Inter', fontWeight: '400', background: 'transparent', border: 'none', outline: 'none', resize: 'none', overflow: 'hidden' }}
           placeholder="Escreva aqui"
           autoFocus
           value={texto}
