@@ -85,32 +85,40 @@ function Criar_publicacao() {
   }
 
   return (
-    <>
-      <div style={{ width: '100vw', height: '100vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: '2vh' }}>
-        <Navbar />
-        <div style={{ width: '65%', height: '70%', margin: 'auto', position: 'absolute', top: '14%', left: '10%', background: 'white', borderRadius: '2vh', border: '0.8vh #820B8A solid' }} />
-        <Button text="Anexar arquivos" onClick={triggerFileInput} className="button-anexar" />
-        <input
-          type="file"
-          ref={fileInputRef}
-          style={{ display: 'none' }}
-          onChange={handleImageChange}
-          accept="image/jpeg, image/png"
-        />
-        <textarea
-          style={{ width: '63vw', height: '65vh', position: 'absolute', top: '15vh', left: '11vw', color: 'black', fontSize: '150%', fontFamily: 'Inter', fontWeight: '400', background: 'transparent', border: 'none', outline: 'none', resize: 'none', overflow: 'hidden' }}
-          placeholder="Escreva aqui"
-          autoFocus
-          value={texto}
-          onChange={handleTextChange}
-        />
-        {/*<Button text="Sair" className="button-sair" />*/}
-        <Button text="Pré-visualizar" onClick={handleFilterClick_pre} className="button-pre" />
-        <Button text="Filtros" onClick={handleFilterClick_filtros} className="button-filtros" />
-        <Button text="Cancelar" onClick={() => setShowPopup(true)} className="button-cancelar" />
-        {showPopup && <Popup onConfirm={handleCancel} onClose={handleClosePopup} />}
+    <div className='container'>
+      <Navbar />
+      <div className='containerCriarPublicacao'>
+        <div className='texto'>
+          <textarea
+            placeholder="Escreva aqui"
+            value={texto}
+            onChange={handleTextChange}
+          />
+        </div>
+        <div className='botoes'>
+          <div className='botoes1'>
+            <Button text="Anexar arquivos" onClick={triggerFileInput} className="button-anexar" />
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              onChange={handleImageChange}
+              accept="image/jpeg, image/png"
+            />
+            <Button text="Filtros" onClick={handleFilterClick_filtros} className="button-filtros" />
+
+
+          </div>
+          <div className='botoes1'>
+
+            <Button text="Pré-visualizar" onClick={handleFilterClick_pre} className="button-pre" />
+            <Button text="Cancelar" onClick={() => setShowPopup(true)} className="button-cancelar" />
+            {showPopup && <Popup onConfirm={handleCancel} onClose={handleClosePopup} />}
+          </div>
+
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
