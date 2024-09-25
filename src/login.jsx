@@ -12,6 +12,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/pagina-inicial'); 
     // Lógica de autenticação aqui
   };
 
