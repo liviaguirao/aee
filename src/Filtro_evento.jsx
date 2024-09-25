@@ -1,79 +1,215 @@
-import { useNavigate } from 'react-router-dom'
-import './App.css'
-import './Style.css'
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import './App.css';
+import './Style.css';
 
-function Filtro_evento() {
-    const navigate = useNavigate();
+function Filtro_Evento() {
+  const navigate = useNavigate();
+  
+  const [expandedFilter, setExpandedFilter] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedCities, setSelectedCities] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
 
-    function handleFilterClick_criar() {
-      navigate('/'); 
+  const countries = [
+    { name: 'Brasil', code: 'BR' },
+    { name: 'Estados Unidos', code: 'US' },
+    { name: 'França', code: 'FR' },
+    { name: 'Alemanha', code: 'DE' }
+  ];
+
+  const statesData = {
+    'BR': ['São Paulo', 'Rio de Janeiro', 'Minas Gerais'],
+    'US': ['Califórnia', 'Nova York', 'Texas'],
+    'FR': ['Île-de-France', 'Provence-Alpes-Côte d\'Azur', 'Auvergne-Rhône-Alpes'],
+    'DE': ['Baviera', 'Berlim', 'Baden-Württemberg']
+  };
+
+  const citiesData = {
+    'São Paulo': ['São Paulo', 'Campinas', 'Santos'],
+    'Rio de Janeiro': ['Rio de Janeiro', 'Niterói', 'Petrópolis'],
+    'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem'],
+    'Califórnia': ['Los Angeles', 'San Francisco', 'San Diego'],
+    'Nova York': ['Nova York', 'Buffalo', 'Rochester'],
+    'Texas': ['Houston', 'Austin', 'Dallas'],
+    'Île-de-France': ['Paris', 'Versalhes', 'Saint-Denis'],
+    'Provence-Alpes-Côte d\'Azur': ['Marselha', 'Nice', 'Toulon'],
+    'Auvergne-Rhône-Alpes': ['Lyon', 'Grenoble', 'Clermont-Ferrand'],
+    'Baviera': ['Munique', 'Nuremberg', 'Augsburgo'],
+    'Berlim': ['Berlim'],
+    'Baden-Württemberg': ['Stuttgart', 'Mannheim', 'Karlsruhe']
+  };
+
+  const handleFilterClickCriar = () => {
+    navigate('/'); 
+  };
+
+  const handleExpandFilter = (filter) => {
+    setExpandedFilter(expandedFilter === filter ? null : filter);
+  };
+
+  const filters = [
+    { label: 'Tipo de eventos', options: ['Musical', 'Teatro', 'Dança', 'Cultural', 'Humorístico', 'Outro'] },
+    { label: 'País', options: countries.map(country => country.name) },
+    { label: 'Estado', options: selectedCountry ? statesData[countries.find(country => country.name === selectedCountry)?.code] || [] : [] },
+    { label: 'Cidade', options: selectedState ? citiesData[selectedState] || [] : [] },
+    { label: 'Gênero', options: ['Comédia', 'Drama', 'Terror'] },
+    { label: 'Data', options: [] } // Filtro de data tratado separadamente
+  ];
+
+  const Button = ({ text, onClick, className }) => {
+    return (
+      <div className={`button-base ${className}`} onClick={onClick}>
+        {text}
+      </div>
+    );
+  };
+
+  const handleCityChange = (city) => {
+    if (selectedCities.includes(city)) {
+      setSelectedCities(selectedCities.filter(c => c !== city));
+    } else {
+      setSelectedCities([...selectedCities, city]);
     }
-
-    const Button = ({ text, onClick, style, className }) => {
-      return (
-        <div className={`button-base ${className}`} style={{ ...style }} onClick={onClick}>
-          {text}
-        </div>
-      );
-    };
+  };
 
   return (
-    <>
-    <div style={{width: 1440, height: 653, position: 'relative', background: 'white'}}>
+    <div style={{ width: 1440, height: 653, position: 'relative', background: 'white' }}>
       <Button
         text="Sair"
-        // onClick={handleSairClick} // Substitua handleSairClick pela função que lida com o clique do botão
-        className="button-sair" 
+        className="button-sair"
       />
       <Button 
         text="Finalizar"
-        onClick={handleFilterClick_criar}
-        className={ 'button-finalizar'}
+        onClick={handleFilterClickCriar}
+        className='button-finalizar'
       />
-      <div style={{width: 356, height: 41, left: 192, top: 56, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{width: 356, height: 41, left: 192, top: 276, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{width: 356, height: 41, left: 192, top: 327, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{width: 356, height: 41, left: 192, top: 378, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{width: 356, height: 41, left: 192, top: 429, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{left: 208, top: 59, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>tipo de eventos</div>
-      <div style={{left: 208, top: 280, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>país</div>
-      <div style={{left: 208, top: 329, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>estado</div>
-      <div style={{left: 208, top: 382, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>cidade</div>
-      <div style={{left: 208, top: 433, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>gênero</div>
-      <div style={{width: 24, height: 24, left: 532, top: 90, position: 'absolute', transform: 'rotate(-180deg)', transformOrigin: '0 0'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 24, height: 24, left: 520, top: 388, position: 'absolute'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 24, height: 24, left: 520, top: 440, position: 'absolute'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 356, height: 41, left: 192, top: 482, position: 'absolute', background: 'rgba(255, 0, 84, 0.19)', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.21)', borderRadius: 16}} />
-      <div style={{left: 208, top: 483, position: 'absolute', textAlign: 'right', color: 'black', fontSize: 24, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Data</div>
-      <div style={{width: 24, height: 24, left: 520, top: 487, position: 'absolute'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 24, height: 24, left: 520, top: 284, position: 'absolute'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 24, height: 24, left: 520, top: 336, position: 'absolute'}}>
-        <div style={{width: 6, height: 12, left: 18, top: 15, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #672A4E solid'}}></div>
-      </div>
-      <div style={{width: 21, height: 21, left: 207, top: 117, position: 'absolute', background: '#D9D9D9'}} />
-      <div style={{width: 12, height: 16, left: 212, top: 122, position: 'absolute', color: '#820B8A', fontSize: 20, fontFamily: 'Manjari', fontWeight: '700', textTransform: 'lowercase', wordWrap: 'break-word'}}>x</div>
-      <div style={{width: 21, height: 21, left: 207, top: 148, position: 'absolute', background: '#D9D9D9'}} />
-      <div style={{width: 21, height: 21, left: 207, top: 179, position: 'absolute', background: '#D9D9D9'}} />
-      <div style={{width: 21, height: 21, left: 207, top: 210, position: 'absolute', background: '#D9D9D9'}} />
-      <div style={{width: 21, height: 21, left: 207, top: 244, position: 'absolute', background: '#D9D9D9'}} />
-      <div style={{width: 87, height: 18, left: 237, top: 119, position: 'absolute', color: 'black', fontSize: 20, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>musical</div>
-      <div style={{width: 87, height: 18, left: 237, top: 150, position: 'absolute', color: 'black', fontSize: 20, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>teatro</div>
-      <div style={{width: 152, height: 18, left: 237, top: 181, position: 'absolute', color: 'black', fontSize: 20, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>DANÇA</div>
-      <div style={{width: 152, height: 18, left: 236, top: 212, position: 'absolute', color: 'black', fontSize: 20, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>cultural</div>
-      <div style={{width: 152, height: 18, left: 237, top: 246, position: 'absolute', color: 'black', fontSize: 20, fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>humorístico</div>
+      
+      {filters.map((filter, index) => (
+        <div key={index} style={{ marginBottom: 20 }}>
+          {/* Filtro principal */}
+          <div 
+            style={{ 
+              width: 356, 
+              height: 41, 
+              position: 'relative', 
+              background: 'rgba(255, 0, 84, 0.19)', 
+              borderRadius: 16, 
+              cursor: 'pointer',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '0 20px'
+            }} 
+            onClick={() => handleExpandFilter(filter.label)}
+          >
+            <div style={{ fontSize: 24, fontFamily: 'Manjari', color: 'black' }}>
+              {filter.label}
+            </div>
+            <div style={{ transform: expandedFilter === filter.label ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+              ▼
+            </div>
+          </div>
+
+          {/* Opções do filtro quando expandido */}
+          {expandedFilter === filter.label && (
+            <div 
+              style={{
+                marginLeft: 20,
+                marginTop: 10,
+                padding: '10px 0',
+                background: 'rgba(255, 0, 84, 0.1)', 
+                borderRadius: 8,
+                width: 'calc(100% - 40px)',
+              }}
+            >
+              {filter.label === 'País' ? (
+                filter.options.map((option, idx) => (
+                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                    <input 
+                      type="radio" 
+                      id={`country-${option}`} 
+                      name="country" 
+                      value={option} 
+                      checked={selectedCountry === option}
+                      onChange={(e) => {
+                        setSelectedCountry(e.target.value);
+                        setSelectedState(''); // Resetar estado ao mudar de país
+                        setSelectedCities([]); // Resetar cidades ao mudar de país
+                      }} 
+                    />
+                    <label htmlFor={`country-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                      {option}
+                    </label>
+                  </div>
+                ))
+              ) : filter.label === 'Estado' ? (
+                filter.options.map((option, idx) => (
+                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                    <input 
+                      type="radio" 
+                      id={`state-${option}`} 
+                      name="state" 
+                      value={option} 
+                      checked={selectedState === option}
+                      onChange={(e) => {
+                        setSelectedState(e.target.value);
+                        setSelectedCities([]); // Resetar cidades ao mudar de estado
+                      }} 
+                    />
+                    <label htmlFor={`state-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                      {option}
+                    </label>
+                  </div>
+                ))
+              ) : filter.label === 'Cidade' ? (
+                filter.options.map((option, idx) => (
+                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                    <input 
+                      type="radio" 
+                      id={`city-${option}`} 
+                      name="city"
+                      value={option}
+                      checked={selectedCities.includes(option)} 
+                      onChange={(e) => {
+                        setSelectedCities(e.target.value); // Resetar cidades ao mudar de estado
+                      }} 
+                    />
+                    <label htmlFor={`city-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                      {option}
+                    </label>
+                  </div>
+                ))
+              ) : filter.label === 'Data' ? (
+                <div style={{ marginTop: 10, display: 'flex', justifyContent: 'flex-start' }}>
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => setSelectedDate(date)}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="Selecione uma data"
+                    className="date-picker"
+                    style={{ textAlign: 'center' }} // Este estilo não é necessário aqui
+                  />
+                </div>
+              ) : (
+                filter.options.map((option, idx) => (
+                  <div key={idx} style={{ marginBottom: 10, display: 'flex', alignItems: 'center' }}>
+                    <input type="checkbox" id={`${filter.label}-${option}`} />
+                    <label htmlFor={`${filter.label}-${option}`} style={{ marginLeft: 8, fontSize: 20 }}>
+                      {option}
+                    </label>
+                  </div>
+                ))
+              )}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
-    </>  
-  )
+  );
 }
 
-export default Filtro_evento
+export default Filtro_Evento;

@@ -274,3 +274,18 @@
     border-radius: 5px; 
     margin: 0 10px; 
   }
+
+  .date-picker {
+    background-color: #ffffff; /* Cor de fundo da caixa */
+    border: 1px solid #ff0054; /* Cor da borda */
+    color: #000; /* Cor do texto */
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Alterando o estilo do placeholder (o texto "Selecione uma data") */
+  .date-picker::placeholder {
+    color: #ff0054; /* Cor do placeholder */
+    opacity: 1; /* Garante que a cor seja aplicada corretamente */
+  }
