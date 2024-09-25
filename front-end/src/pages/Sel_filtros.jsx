@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import '../styles/App.css'
 import '../styles/Style.css'
+import Navbar from '../components/navbar';
 
 function Sel_filtros() {
   const navigate = useNavigate();
@@ -28,11 +29,7 @@ function Sel_filtros() {
   return (
     <>
       <div style={{width: '100vw', height: '100vh', position: 'relative', background: 'white'}}>
-        <Button
-          text="Sair"
-          // onClick={handleSairClick} // Substitua handleSairClick pela função que lida com o clique do botão
-          className="button-sair"
-        />
+        <Navbar />
         <div style={{left: '23vw', top: '10vh', position: 'absolute', textAlign: 'center', color: 'black', fontSize: '400%', fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Você é um artista ou um evento?</div>
         <Button
           text="Artista"
