@@ -226,40 +226,40 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 30px;
-    gap: 20px;
+    font-size: 200%;
+    gap: 5vh;
   }
 
   .buttons-container {
     display: flex;
     justify-content: center; 
-    gap: 20px; 
+    gap: 5vh; 
   }
   
   .popup-actions {
     display: flex;
     justify-content: space-around; 
     width: 100%; 
-    padding: 10px;
+    padding: 2.5vh;
   }
 
   .pop-yes-button, .pop-no-button {
     background-color: #820B8A; 
     color: white; 
     border: none; 
-    padding: 10px 20px; 
+    padding: 2.5vh 5vh; 
     cursor: pointer; 
-    border-radius: 5px; 
-    margin: 0 10px; 
+    border-radius: 3vh; 
+    margin: 0 5vh; 
   }
 
   .date-picker {
     background-color: #ffffff; /* Cor de fundo da caixa */
-    border: 1px solid #ff0054; /* Cor da borda */
+    border: 0.4vh solid #ff0054; /* Cor da borda */
     color: #000; /* Cor do texto */
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 8px;
+    font-size: 100%;
+    padding: 2vh;
+    border-radius: 2vh;
   }
   
   /* Alterando o estilo do placeholder (o texto "Selecione uma data") */
