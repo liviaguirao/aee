@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from "./navbar.module.css";
-import { motion } from 'framer-motion';
+import styles from "../styles/navbar.module.css";
 import { FaHome, FaSearch, FaCalendarAlt } from "react-icons/fa";
 import { MdAddCard } from "react-icons/md";
 import { IoFilter, IoClose } from "react-icons/io5";

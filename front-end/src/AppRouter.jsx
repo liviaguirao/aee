@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion'; // Importar AnimatePresence e motion
-import Login from './login'; // Importe o componente da página de login
-import CriarConta from './CriarConta'; // Importe o componente da página de criar conta
-import Navbar from './navbar';
+import Login from './pages/login'; // Importe o componente da página de login
+import CriarConta from './pages/CriarConta'; // Importe o componente da página de criar conta
+import Navbar from './components/navbar';
 
 const pageAnimation = {
   initial: { opacity: 0 }, // Inicialmente invisível

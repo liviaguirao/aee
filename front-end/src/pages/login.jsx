@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate
-import styles from "./login.module.css";
+import styles from "../styles/login.module.css";
 import { motion } from 'framer-motion';
-import logo from './assets/logo-completa.png'; // Caminho relativo ao arquivo atual
+import logo from '../assets/logo-completa.png'; // Caminho relativo ao arquivo atual
 
 
 function Login() {

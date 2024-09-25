@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from "./criarConta.module.css";
+import styles from "../styles/criarConta.module.css";
 import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate
-import logo from './assets/logo-completa.png'; // Caminho relativo ao arquivo atual
+import logo from '../assets/logo-completa.png'; // Caminho relativo ao arquivo atual
 
 function CriarConta() {
     const [nome, setNome] = useState('');
