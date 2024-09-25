@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './App.css';
-import './Style.css';
+import '../styles/App.css';
+import '../styles/Style.css';
 
 function Filtro_Evento() {
   const navigate = useNavigate();

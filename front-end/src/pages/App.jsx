@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Criar_publicacao from './Criar_publicacao';
 import Sel_filtros from './Sel_filtros';

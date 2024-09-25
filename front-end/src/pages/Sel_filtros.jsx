@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import './App.css'
-import './Style.css'
+import '../styles/App.css'
+import '../styles/Style.css'
 
 function Sel_filtros() {
   const navigate = useNavigate();

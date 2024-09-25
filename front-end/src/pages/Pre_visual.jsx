@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
-import './App.css'
-import './Style.css'
+import '../styles/App.css'
+import '../styles/Style.css'
 
 function Pre_visual() {
     const navigate = useNavigate();

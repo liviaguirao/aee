@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import './Style.css';
-import Navbar from './navbar';
+import '../styles/App.css'
+import '../styles/Style.css'
+import Navbar from '../components/navbar';
 
 function Criar_publicacao() {
   const navigate = useNavigate();
@@ -86,7 +86,8 @@ function Criar_publicacao() {
 
   return (
     <>
-      <div style={{ width: '88vw', height: '90vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: 15 }}>
+      <div style={{ width: '100vw', height: '100vh', position: 'relative', background: 'white', margin: 'auto', borderRadius: 15 }}>
+        <Navbar />
         <div style={{ width: '65%', height: '70%', margin: 'auto', position: 'absolute', top: '14%', left: '10%', background: 'white', borderRadius: 15, border: '5px #820B8A solid' }} />
         <Button text="Anexar arquivos" onClick={triggerFileInput} className="button-anexar" />
         <input
@@ -103,7 +104,7 @@ function Criar_publicacao() {
           value={texto}
           onChange={handleTextChange}
         />
-        <Button text="Sair" className="button-sair" />
+        {/*<Button text="Sair" className="button-sair" />*/}
         <Button text="Pré-visualizar" onClick={handleFilterClick_pre} className="button-pre" />
         <Button text="Filtros" onClick={handleFilterClick_filtros} className="button-filtros" />
         <Button text="Cancelar" onClick={() => setShowPopup(true)} className="button-cancelar" />
