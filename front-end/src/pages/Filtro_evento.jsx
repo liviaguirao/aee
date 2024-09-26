@@ -2,8 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../styles/filtro.css'
-
+import styles from '../styles/filtro.module.css'
 import Navbar from '../components/navbar';
 
 function Filtro_Evento() {
@@ -36,8 +35,17 @@ function Filtro_Evento() {
     const citiesData = {
         'São Paulo': ['São Paulo', 'Campinas', 'Santos'],
         'Rio de Janeiro': ['Rio de Janeiro', 'Niterói', 'Petrópolis'],
-        // ... restantes das cidades
-    };
+        'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem'],
+        'Califórnia': ['Los Angeles', 'San Francisco', 'San Diego'],
+        'Nova York': ['Nova York', 'Buffalo', 'Rochester'],
+        'Texas': ['Houston', 'Austin', 'Dallas'],
+        'Île-de-France': ['Paris', 'Versalhes', 'Saint-Denis'],
+        'Provence-Alpes-Côte d\'Azur': ['Marselha', 'Nice', 'Toulon'],
+        'Auvergne-Rhône-Alpes': ['Lyon', 'Grenoble', 'Clermont-Ferrand'],
+        'Baviera': ['Munique', 'Nuremberg', 'Augsburgo'],
+        'Berlim': ['Berlim'],
+        'Baden-Württemberg': ['Stuttgart', 'Mannheim', 'Karlsruhe']
+      };
 
     const handleFilterClickCriar = () => {
         console.log("Filtros Selecionados:", filters); // Adiciona um console.log
@@ -88,31 +96,41 @@ function Filtro_Evento() {
     };
 
     const filtersConfig = [
-        { label: 'Tipo de eventos', options: ['Musical', 'Teatro', 'Dança', 'Cultural', 'Humorístico', 'Outro'] },
+        { label: 'Tipo de eventos', options: ['Show','Musical', 'Teatro', 'Dança', 'Cultural', 'Humorístico', 'Esportivo', 'Festival', 'Feira', 'Congresso', 'Palestra', 'Outro'] },
         { label: 'País', options: countries.map(country => country.name) },
         { label: 'Estado', options: filters.selectedCountry ? statesData[countries.find(country => country.name === filters.selectedCountry)?.code] || [] : [] },
         { label: 'Cidade', options: filters.selectedState ? citiesData[filters.selectedState] || [] : [] },
-        { label: 'Gênero', options: ['Comédia', 'Drama', 'Terror'] },
+        { label: 'Gênero', options: [ 'Comédia', 'Drama', 'Terror', 'Romance', 'Aventura', 'Ficção Científica', 'Documentário', 'Infantil', 
+            'Ação', 'Suspense', 'Musical', 'Fantasia', 'Histórico', 'Biografia', 'Guerra', 'Mistério', 'Animação', 
+            'Faroeste', 'Reality Show', 'Experimental', 'Crime', 'Super-herói', 'Thriller', 'Musical de Palco', 
+            'Stand-up', 'Ópera', 'Improviso', 'Show de Talentos', 'Clássico', 'Sertanejo', 'Rock', 'Pop', 
+            'Samba', 'Forró', 'Pagode', 'MPB', 'Funk', 'Eletrônica', 'Jazz', 'Hip Hop', 'Rap', 'Reggae', 
+            'Gospel', 'Bossa Nova', 'Heavy Metal', 'Indie', 'Country', 'K-Pop', 'Música Clássica'] },
         { label: 'Data', options: [] } // Filtro de data tratado separadamente
     ];
 
 
 
     return (
-        <div className='container'>
+        <div className={styles.container}>
             <Navbar />
-            <div className='container2'>
-                <div className='containerFiltros'>
+            <div className={styles.container2} >
+                <div className={styles.containerFiltros}>
+
                     {filtersConfig.map((filter, index) => (
-                        <div className='containerfiltro' key={index}>
-                            <div className='nomefiltro' onClick={() => handleExpandFilter(filter.label)}>
+                        <div className={styles.containerfiltro} key={index}>
+                            {/* Filtro principal */}
+                            <div className={styles.nomefiltro} onClick={() => handleExpandFilter(filter.label)}>
                                 ▼ {filter.label}
                             </div>
+
+                            {/* Opções do filtro quando expandido */}
                             {filters.expandedFilter === filter.label && (
-                                <div className='containerSeleção'>
+                                <div className={styles.containerSeleção}>
+                                    {/* Renderização condicional dos filtros */}
                                     {filter.label === 'País' ? (
                                         filter.options.map((option, idx) => (
-                                            <div className='filtro' key={idx}>
+                                            <div className={styles.filtro} key={idx}>
                                                 <input
                                                     type="radio"
                                                     id={`country-${option}`}
@@ -139,23 +157,19 @@ function Filtro_Evento() {
                                             </div>
                                         ))
                                     ) : filter.label === 'Cidade' ? (
-                                        filter.options.length > 0 ? (
-                                            filter.options.map((option, idx) => (
-                                                <div key={idx}>
-                                                    <input
-                                                        type="checkbox"
-                                                        id={`city-${option}`}
-                                                        name="city"
-                                                        value={option}
-                                                        checked={filters.selectedCities.includes(option)}
-                                                        onChange={() => handleCityChange(option)}
-                                                    />
-                                                    <label htmlFor={`city-${option}`}>{option}</label>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <p>Selecione um estado para ver as cidades disponíveis.</p>
-                                        )
+                                        filter.options.map((option, idx) => (
+                                            <div key={idx}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`city-${option}`}
+                                                    name="city"
+                                                    value={option}
+                                                    checked={filters.selectedCities.includes(option)}
+                                                    onChange={() => handleCityChange(option)}
+                                                />
+                                                <label htmlFor={`city-${option}`}>{option}</label>
+                                            </div>
+                                        ))
                                     ) : filter.label === 'Data' ? (
                                         <div>
                                             <DatePicker
@@ -184,9 +198,14 @@ function Filtro_Evento() {
                         </div>
                     ))}
                 </div>
-                <div className='containerbutton'>
-                    <button onClick={handleFilterClickCriar}>Finalizar</button>
+                <div className={styles.containerbutton}>
+                    <button
+                        onClick={handleFilterClickCriar}
+                    >Filtrar
+                    </button>
                 </div>
+
+
             </div>
         </div>
     );
