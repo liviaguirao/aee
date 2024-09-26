@@ -9,21 +9,6 @@ body {
   background-color: #f5f5f5;
 }
 
-.agenda {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  width: 15%;
-  background-color: #ff4f99;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-right: 2px solid #ddd;
-}
-
 .profile {
   margin-bottom: 20px;
 }
@@ -76,12 +61,11 @@ body {
 
 .header h1 {
   font-size: 28px;
-  color: #7d287d;
+  color: #000000;
 }
-
 .create-event-btn {
   padding: 10px 20px;
-  background-color: #7d287d;
+  background-color: #820B8A;
   color: white;
   border: none;
   cursor: pointer;
@@ -185,7 +169,11 @@ body {
 }
 .agenda {
   display: flex;
-  height: 100vh;
+  width: 93%;
+  height: 85px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, #6D0A9B 0%, #FA2F84 49.5%, #F58C2B 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .calendar-container {
