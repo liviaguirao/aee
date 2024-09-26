@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  background-color: lightblue; /*#f5f5f5*/
 }
 
 .profile {
@@ -56,7 +56,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-left: 25px;
 }
 
 .header h1 {
@@ -81,14 +81,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 200px;
 }
 
 .calendar-controls button {
   background-color: transparent;
   border: none;
   font-size: 24px;
-  color: #7d287d;
+  color: #820B8A;
   cursor: pointer;
   padding: 0 15px;
 }
@@ -96,15 +96,9 @@ body {
 .calendar-controls span {
   font-size: 18px;
   font-weight: bold;
-  color: #7d287d;
+  color: #820B8A;
 }
 
-.calendar {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .calendar-header {
   display: grid;
@@ -113,8 +107,8 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
-  color: #7d287d;
-  margin-bottom: 10px;
+  color: #820B8A;
+  margin-top: 200px;
 }
 
 .calendar-days {
@@ -144,17 +138,11 @@ body {
   right: 5px;
 }
 
-.upcoming-events {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .upcoming-events h3 {
   font-size: 20px;
-  color: #7d287d;
+  color: #820B8A;
   margin-bottom: 10px;
 }
 
