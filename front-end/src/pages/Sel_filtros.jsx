@@ -7,11 +7,11 @@ function Sel_filtros() {
   const navigate = useNavigate();
 
   function handleFilterClick_artista() {
-    navigate('/filtro_artista'); 
+    navigate('/filtro_artista');
   }
 
   function handleFilterClick_evento() {
-    navigate('/filtro_evento'); 
+    navigate('/filtro_evento');
   }
 
   function handleFilterClick_voltar() {
@@ -27,27 +27,23 @@ function Sel_filtros() {
   };
 
   return (
-    <>
-      <div style={{width: '100vw', height: '100vh', position: 'relative', background: 'white'}}>
-        <Navbar />
-        <div style={{left: '23vw', top: '10vh', position: 'absolute', textAlign: 'center', color: 'black', fontSize: '400%', fontFamily: 'Manjari', fontWeight: '400', textTransform: 'lowercase', wordWrap: 'break-word'}}>Você é um artista ou um evento?</div>
-        <Button
-          text="Artista"
-          onClick={handleFilterClick_artista}
-          className="button-artista"
-        />
-        <Button 
-          text="Evento"
-          onClick={handleFilterClick_evento}
-          className={ 'button-evento'}
-        />
-        <Button
-          text="Voltar"
-          onClick={handleFilterClick_voltar}
-          className="button-voltar"
-        />
+    <div className='container'>
+      <Navbar />
+      <div className='texto_sel'>
+        <div style={{ fontSize: '3rem', height: '15%', marginTop: '10%' }}> Você é um artista ou um evento? </div>
+        <div className='botoes3'>
+          <div className='botoes2'>
+            <Button text="Artista" onClick={handleFilterClick_artista} className="button-artista" />
+            <Button text="Evento" onClick={handleFilterClick_evento} className="button-evento" />
+          </div>
+          <div style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+            <div className='botoes2'>
+              <button onClick={handleFilterClick_voltar}>Voltar</button>
+            </div>
+          </div>
         </div>
-    </>
+      </div>
+    </div>
   )
 }
 
