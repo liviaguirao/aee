@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion'; // Importar AnimatePresence e motion
 import Login from './pages/login'; // Importe o componente da página de login
 import CriarConta from './pages/CriarConta'; // Importe o componente da página de criar conta
-import Navbar from './components/navbar';
+import Filtro_Artista from './pages/Filtro_Artista';
 import Filtro_Evento from './pages/Filtro_evento';
+import PaginaInicial from './pages/PaginaInicial'
 
 const pageAnimation = {
   initial: { opacity: 0 }, // Inicialmente invisível
@@ -36,13 +37,19 @@ function AppRouter() {
           <Route
             path="/pagina-inicial"
             element={
-                <Navbar />
+                <PaginaInicial />
             }
           />
           <Route
-            path="/filtros"
+            path="/filtros-eventos"
             element={
                 <Filtro_Evento />
+            }
+          />
+          <Route
+            path="/filtros-artistas"
+            element={
+                <Filtro_Artista />
             }
           />
         </Routes>

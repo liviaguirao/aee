@@ -45,7 +45,7 @@ function Filtro_Evento() {
         'Baviera': ['Munique', 'Nuremberg', 'Augsburgo'],
         'Berlim': ['Berlim'],
         'Baden-Württemberg': ['Stuttgart', 'Mannheim', 'Karlsruhe']
-      };
+    };
 
     const handleFilterClickCriar = () => {
         console.log("Filtros Selecionados:", filters); // Adiciona um console.log
@@ -96,16 +96,26 @@ function Filtro_Evento() {
     };
 
     const filtersConfig = [
-        { label: 'Tipo de eventos', options: ['Show','Musical', 'Teatro', 'Dança', 'Cultural', 'Humorístico', 'Esportivo', 'Festival', 'Feira', 'Congresso', 'Palestra', 'Outro'] },
+        {
+            label: 'Tipo de artista',
+            options: [
+                'Cantor', 'Ator', 'Dançarino', 'Músico', 'Artista plástico', 'Humorista', 'Escritor', 'Cineasta',
+                'DJ', 'Pintor', 'Escultor', 'Poeta', 'Fotógrafo', 'Grafiteiro', 'Designer', 'Produtor musical',
+                'Diretor', 'Rapper', 'Ilustrador', 'Compositor', 'Coreógrafo', 'Cinegrafista', 'Arquiteto',
+                'Estilista', 'Influenciador digital', 'Outro'
+            ]
+        },
         { label: 'País', options: countries.map(country => country.name) },
         { label: 'Estado', options: filters.selectedCountry ? statesData[countries.find(country => country.name === filters.selectedCountry)?.code] || [] : [] },
         { label: 'Cidade', options: filters.selectedState ? citiesData[filters.selectedState] || [] : [] },
-        { label: 'Gênero', options: [ 'Comédia', 'Drama', 'Terror', 'Romance', 'Aventura', 'Ficção Científica', 'Documentário', 'Infantil', 
-            'Ação', 'Suspense', 'Musical', 'Fantasia', 'Histórico', 'Biografia', 'Guerra', 'Mistério', 'Animação', 
-            'Faroeste', 'Reality Show', 'Experimental', 'Crime', 'Super-herói', 'Thriller', 'Musical de Palco', 
-            'Stand-up', 'Ópera', 'Improviso', 'Show de Talentos', 'Clássico', 'Sertanejo', 'Rock', 'Pop', 
-            'Samba', 'Forró', 'Pagode', 'MPB', 'Funk', 'Eletrônica', 'Jazz', 'Hip Hop', 'Rap', 'Reggae', 
-            'Gospel', 'Bossa Nova', 'Heavy Metal', 'Indie', 'Country', 'K-Pop', 'Música Clássica'] },
+        {
+            label: 'Gênero', options: ['Comédia', 'Drama', 'Terror', 'Romance', 'Aventura', 'Ficção Científica', 'Documentário', 'Infantil',
+                'Ação', 'Suspense', 'Musical', 'Fantasia', 'Histórico', 'Biografia', 'Guerra', 'Mistério', 'Animação',
+                'Faroeste', 'Reality Show', 'Experimental', 'Crime', 'Super-herói', 'Thriller', 'Musical de Palco',
+                'Stand-up', 'Ópera', 'Improviso', 'Show de Talentos', 'Clássico', 'Sertanejo', 'Rock', 'Pop',
+                'Samba', 'Forró', 'Pagode', 'MPB', 'Funk', 'Eletrônica', 'Jazz', 'Blues', 'Hip Hop', 'Rap', 'Reggae',
+                'Gospel', 'Bossa Nova', 'Heavy Metal', 'Indie', 'Country', 'K-Pop', 'Reggaeton', 'Música Clássica']
+        },
         { label: 'Data', options: [] } // Filtro de data tratado separadamente
     ];
 

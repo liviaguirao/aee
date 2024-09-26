@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+.container .filtro{
+    display: flex;
+    width: 90%;
+    height: 20%;
+    border-bottom: dashed #FF0054;;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .filtro button{
+    background-color: #820B8A;
+    font-family: "Poppins", sans-serif;
+    color:white;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.72);
+    padding: 1% 3%;
+    cursor: pointer;
+}
+.container .filtro button:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */
+    transition: 0.3s;
+}
+.container1{
+    width: 21%;
+
+}

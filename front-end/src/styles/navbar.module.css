@@ -61,6 +61,7 @@ nav {
     background: #820B8A;
     color: white;
     font-family: "Poppins", sans-serif; 
+    cursor: pointer;
 }
 .logoutButton:hover {
     transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */

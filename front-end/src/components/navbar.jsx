@@ -107,7 +107,7 @@ const SearchModal = ({ isOpen, onClose, recentSearches, setRecentSearches }) => 
     );
 };
 
-function Navbar() {
+function Navbar({ filtroSelecionado }) {
     const navigate = useNavigate();
     const location = useLocation();
     const [isModalOpen, setModalOpen] = useState(false); // Estado para controlar o modal
@@ -115,6 +115,17 @@ function Navbar() {
         const savedSearches = localStorage.getItem('recentSearches');
         return savedSearches ? JSON.parse(savedSearches) : []; // Recuperar do localStorage
     });
+    const [filtros, setFiltros] = useState("");
+
+    useEffect(() => {
+        if (filtroSelecionado === 'Artista') {
+            setFiltros('/filtros-artistas'); // Aqui você define os filtros específicos de artista
+        } else if (filtroSelecionado === 'Evento') {
+            setFiltros('/filtros-eventos'); // Aqui os filtros específicos de evento
+        }else{
+            setFiltros('/filtros-eventos');
+        }
+    }, [filtroSelecionado]);
 
     const handleNavigate = (path) => {
         navigate(path);
@@ -157,8 +168,8 @@ function Navbar() {
                     <MdAddCard />
                 </li>
                 <li
-                    onClick={() => handleNavigate('/filtros')}
-                    className={location.pathname === '/filtros' ? styles.active : ''}
+                    onClick={() => handleNavigate(filtros)}
+                    className={location.pathname === filtros ? styles.active : ''}
                 >
                     <IoFilter />
                 </li>
