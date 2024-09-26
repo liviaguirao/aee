@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'; // Importar AnimatePres
 import Login from './pages/login'; // Importe o componente da página de login
 import CriarConta from './pages/CriarConta'; // Importe o componente da página de criar conta
 import Navbar from './components/navbar';
+import Filtro_Evento from './pages/Filtro_evento';
 
 const pageAnimation = {
   initial: { opacity: 0 }, // Inicialmente invisível
@@ -36,6 +37,12 @@ function AppRouter() {
             path="/pagina-inicial"
             element={
                 <Navbar />
+            }
+          />
+          <Route
+            path="/filtros"
+            element={
+                <Filtro_Evento />
             }
           />
         </Routes>
