@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import "./App.css"; // Arquivo de estilos separado
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from './components/navbar'; // Navbar
+import "./App.css"; // Certifique-se de que esse arquivo tem os estilos corretos
 
-
-const Agenda = () => {
+// Componente Agenda
+function Agenda() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
@@ -40,53 +40,61 @@ const Agenda = () => {
 
   return (
     <div className="agenda">
-      <div className="sidebar">
-        <div className="profile">
-          <img src="profile-pic-url" alt="Perfil" className="profile-pic" />
-        </div>
-        <nav className="menu">
-          <button className="menu-btn">Home</button>
-          <button className="menu-btn">Agenda</button>
-          <button className="menu-btn">Configurações</button>
-        </nav>
+      {/* Cabeçalho */}
+      <div className="header">
+        <h1>AGENDA</h1>
+        <button className="create-event-btn">Criar Novo Evento</button>
       </div>
 
-      <div className="main-content">
-        <div className="header">
-          <h1>AGENDA</h1>
-          <button className="create-event-btn">Criar Novo Evento</button>
-        </div>
+      {/* Controles do calendário */}
+      <div className="calendar-controls">
+        <button onClick={handlePrevMonth}>{"<"}</button>
+        <span>{`Mês de ${currentYear}`}</span>
+        <button onClick={handleNextMonth}>{">"}</button>
+      </div>
 
-        <div className="calendar-controls">
-          <button onClick={handlePrevMonth}>{"<"}</button>
-          <span>{`Mês de ${currentYear}`}</span>
-          <button onClick={handleNextMonth}>{">"}</button>
+      {/* Exibição do calendário */}
+      <div className="calendar">
+        <div className="calendar-header">
+          <div>DOM</div>
+          <div>SEG</div>
+          <div>TER</div>
+          <div>QUA</div>
+          <div>QUI</div>
+          <div>SEX</div>
+          <div>SAB</div>
         </div>
+        <div className="calendar-days">{renderDays()}</div>
+      </div>
 
-        <div className="calendar">
-          <div className="calendar-header">
-            <div>DOM</div>
-            <div>SEG</div>
-            <div>TER</div>
-            <div>QUA</div>
-            <div>QUI</div>
-            <div>SEX</div>
-            <div>SAB</div>
-          </div>
-          <div className="calendar-days">{renderDays()}</div>
-        </div>
-
-        <div className="upcoming-events">
-          <h3>Próximos eventos</h3>
-          <ul>
-            <li>Forró do Titão</li>
-            <li>Bar da Loira</li>
-            <li>Arretados Piseiro</li>
-          </ul>
-        </div>
+      {/* Próximos eventos */}
+      <div className="upcoming-events">
+        <h3>Próximos eventos</h3>
+        <ul>
+          <li>Forró do Titão</li>
+          <li>Bar da Loira</li>
+          <li>Arretados Piseiro</li>
+        </ul>
       </div>
     </div>
   );
-};
+}
 
-export default Agenda;
+// Função principal do App
+function App() {
+  return (
+    <Router>
+      <div className="app-layout" style={{ display: 'flex' }}>
+        {/* Navbar persistente */}
+        <Navbar />
+
+        {/* Exibe a Agenda ao lado da Navbar */}
+        <div style={{ flexGrow: 1, padding: '20px' }}>
+          <Agenda />
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
