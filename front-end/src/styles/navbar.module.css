@@ -1,0 +1,179 @@
+nav {
+    width: 9%;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    border-right: solid #FF0054;
+}
+.profile{
+   display: flex; 
+   height: 25%;
+   align-items: center;
+    justify-content: center;
+}
+.profile img{
+    width: 3.5em;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.menu{
+    display: flex;
+    margin: 0%;
+    padding: 0;
+    height: 55%;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    align-items: center;
+    gap: 6%;
+}
+.menu li{
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    background: #FF5400;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    cursor:pointer;
+}
+.menu li:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 20% ao passar o mouse */
+    transition: 0.4s;
+}
+.menu li.active {
+    border: 0.4vh solid black; /* Adiciona uma borda branca ao item ativo */
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra para destacar */
+}
+.menu li svg {
+    width: 50%;
+    height: 50%;
+
+}
+.logoutButton{
+    display: block;
+    margin: 44% auto 1%;;
+    height: 5%;
+    width: 50%;
+    border-radius: 1rem;
+    border: none;
+    background: #820B8A;
+    color: white;
+    font-family: "Poppins", sans-serif; 
+    cursor: pointer;
+}
+.logoutButton:hover {
+    transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */
+    transition: 0.4s;
+}
+
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 9.2%;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.582);
+    display: flex;
+    justify-content: flex-start;
+    z-index: 1000;
+    align-items: flex-start;
+}
+
+.modalContent {
+    background: white;
+    padding: 1%;
+    border-radius: 8px;
+    border: solid #FF0054;
+    border-left: none;
+    width: 25%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modalContent input{
+    width: 80%;
+    background-color:  rgba(255, 0, 84, 0.19);
+    color: black;
+    padding: 4% 7%;
+
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.listaPerfil{
+    display: flex;
+    height: 49vh;
+    list-style-type: none;
+    overflow-y: auto;
+    gap: 6%;
+    flex-direction: column;
+    padding: 2% 5%;
+}
+
+.listaPerfil li{
+    display: flex;
+    background: #FF5400;
+    border-radius: 1rem;
+    cursor: pointer;
+    flex-direction: column;
+}
+.listaPerfil li .container{
+    display: flex;
+    align-items: center;
+    padding: 5% 5% 0%;
+    gap: 4%;
+}
+.listaPerfil li img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.listaPerfil li p{
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 2% 7%;
+}
+
+
+
+.listaPerfil::-webkit-scrollbar {
+    width: 1.2vw; /* Largura da barra de rolagem */
+}
+
+.listaPerfil::-webkit-scrollbar-track {
+    background: #e6e6e6; /* Cor do fundo da barra de rolagem */
+    border-radius: 4rem;
+}
+
+
+.listaPerfil::-webkit-scrollbar-thumb {
+    background: #820B8A; /* Cor da parte que pode ser arrastada */
+    border-radius: 4rem; /* Bordas arredondadas */
+}
+
+.listaPerfil::-webkit-scrollbar-thumb:hover {
+    background: #b800c5; /* Cor quando o mouse está sobre a barra */
+}
+
+.resetButton{
+    display: block;
+    margin: auto;
+    width: 64%;
+    background-color: #820B8A;
+    color: white;
+    border: none;
+    padding: 4% 5%;
+    font-size: 0.7rem;
+    font-family: "Poppins", sans-serif;
+    border-radius: 1rem;
+}
