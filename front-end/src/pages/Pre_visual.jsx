@@ -29,7 +29,6 @@ function Pre_visual() {
       <div className='containerPreVisual'>
         <div className='textoPreVisual'>
           <div className='publicacao'>
-            <img style={{ borderRadius: '100%' }} src="https://via.placeholder.com/63x63"></img>
             {imagem ? (
               <img src={imagem} alt="Imagem selecionada" style={{ maxWidth: '80%', maxHeight: '80%', borderRadius: '1rem' }} />
             ) : (
@@ -45,7 +44,7 @@ function Pre_visual() {
             <Button text="Publicar" className="button-publicar" />
           </div>
           <div className='botoes1'>
-            <Button text="Cancelar" onClick={handleFilterClick_cancelar} className="button-cancelar-pre" />
+            <Button text="Voltar" onClick={handleFilterClick_cancelar} className="button-cancelar-pre" />
           </div>
         </div>
       </div>

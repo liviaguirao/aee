@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);/
+  background-color: rgba(0, 0, 0, 0.664);/
 }
 
 .popup-container {
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 200%;
+  font-size: 1.3rem;
   gap: 5vh;
 }
 
@@ -42,26 +42,22 @@
   cursor: pointer;
   border-radius: 3vh;
   margin: 0 5vh;
+  box-shadow: 0px 4px 5px 0px rgba(255, 255, 255, 0.575);
 }
 
 .date-picker {
   background-color: #ffffff;
-  /* Cor de fundo da caixa */
   border: 0.4vh solid #ff0054;
-  /* Cor da borda */
   color: #000;
-  /* Cor do texto */
-  font-size: 100%;
-  padding: 2vh;
-  border-radius: 2vh;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 3vh;
+  outline: none;
 }
 
 /* Alterando o estilo do placeholder (o texto "Selecione uma data") */
 .date-picker::placeholder {
   color: #ff0054;
-  /* Cor do placeholder */
-  opacity: 1;
-  /* Garante que a cor seja aplicada corretamente */
 }
 
 
@@ -129,8 +125,10 @@ textarea {
   cursor: pointer;
 
 }
-.button-base:hover{
-  transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */
+
+.button-base:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho em 20% ao passar o mouse */
   transition: 0.4s;
 }
 
@@ -158,7 +156,7 @@ textarea {
   border: none;
 }
 
-.publicacao{
+.publicacao {
   border: solid #820B8A;
   border-radius: 1rem;
   padding: 3%;
@@ -170,30 +168,27 @@ textarea {
   gap: 1%;
 }
 
-.publicacao img{
+.publicacao img {
   max-width: 3rem;
   max-height: 3rem;
   object-fit: cover;
 }
 
 .texto_sel {
-  width: 100%;
-  height: 100%;
+  width: 91%;
+  height: 100vh;
+  gap: 10%;
   display: flex;
-  font: "Poppins", sans-serif;
-  font-weight: 400;
-  text-align: center; 
-  color: black;
   flex-direction: column;
 }
 
 .botoes2 {
   flex-direction: row;
   display: flex;
-  height: 30%;
-  width: 48%;
+  height: 13%;
+  width: 45%;
   justify-content: space-around;
-  gap: 20%;
+  gap: 30%;
   align-items: center;
 }
 
@@ -202,15 +197,15 @@ textarea {
   width: 100%;
   height: 75%;
   flex-direction: column;
-  gap: 20%;
   align-items: center;
+  gap: 60%;
 }
 
-.botoes2 button {
+.botoes3 button {
   display: flex;
   background-color: #820B8A;
-  width: 30%;
-  height: 43%;
+  width: 34%;
+  height: 100%;
   color: white;
   border-radius: 1rem;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.575);
@@ -218,9 +213,20 @@ textarea {
   justify-content: space-around;
   cursor: pointer;
   border-width: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 }
 
-.botoes2 button:hover{
-  transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */
+.botoes3 button:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho em 20% ao passar o mouse */
   transition: 0.4s;
+}
+
+.textopergunta {
+  height: 25%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 1.7rem;
 }

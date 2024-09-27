@@ -2,8 +2,8 @@ import '../styles/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Criar_publicacao from './Criar_publicacao';
 import Sel_filtros from './Sel_filtros';
-import Filtro_artista from './Filtro_artista';
-import Filtro_evento from './Filtro_evento';
+import Filtro_artista from './FiltroDaPubliartista';
+import Filtro_evento from './FiltroDaPublievento';
 import Pre_visual from './Pre_visual';
 import  {ImageProvider}  from './ImageContext';
 

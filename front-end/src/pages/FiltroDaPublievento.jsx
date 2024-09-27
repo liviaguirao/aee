@@ -49,7 +49,7 @@ function Filtro_Evento() {
 
     const handleFilterClickCriar = () => {
         console.log("Filtros Selecionados:", filters); // Adiciona um console.log
-        navigate('/pagina-inicial', { state: filters });
+        navigate('/', { state: filters });
     };
 
     const handleExpandFilter = (filter) => {
@@ -201,7 +201,7 @@ function Filtro_Evento() {
                 <div className={styles.containerbutton}>
                     <button
                         onClick={handleFilterClickCriar}
-                    >Filtrar
+                    >Adicionar filtros
                     </button>
                 </div>
 

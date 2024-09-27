@@ -68,9 +68,9 @@ function Criar_publicacao() {
     <div className="popup-background">
       <div className="popup-container">
         <p>Tem certeza que deseja cancelar?</p>
-        <div className="buttons-container">
-          <Button text="Sim" onClick={onConfirm} className="pop-yes-button" />
-          <Button text="Não" onClick={onClose} className="pop-no-button" />
+        <div className="buttonsModal">
+          <button  onClick={onConfirm} className="pop-yes-button">Sim</button>
+          <button  onClick={onClose} className="pop-no-button">Nao</button>
         </div>
       </div>
     </div>
@@ -111,7 +111,7 @@ function Criar_publicacao() {
           </div>
           <div className='botoes1'>
 
-            <Button text="Pré-visualizar" onClick={handleFilterClick_pre} className="button-pre" />
+            <Button text="Visualizar Anexo" onClick={handleFilterClick_pre} className="button-pre" />
             <Button text="Cancelar" onClick={() => setShowPopup(true)} className="button-cancelar" />
             {showPopup && <Popup onConfirm={handleCancel} onClose={handleClosePopup} />}
           </div>

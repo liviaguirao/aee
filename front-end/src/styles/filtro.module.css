@@ -48,7 +48,7 @@
     margin: 0;
     font-size: 0.7rem;
 }
-.container2 button{
+.containerbutton button{
     height: 8%;
     padding: 1% 4%;
     display: flex;
@@ -88,3 +88,8 @@
 .containerFiltros::-webkit-scrollbar-thumb:hover {
     background: #b800c5; /* Cor quando o mouse está sobre a barra */
 }
+.react-datepicker button{
+    background-color: transparent;
+    background: blue;
+}
+

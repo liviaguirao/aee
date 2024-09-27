@@ -49,7 +49,7 @@ function Filtro_Evento() {
 
     const handleFilterClickCriar = () => {
         console.log("Filtros Selecionados:", filters); // Adiciona um console.log
-        navigate('/pagina-inicial', { state: filters });
+        navigate('/', { state: filters });
     };
 
     const handleExpandFilter = (filter) => {
@@ -154,7 +154,7 @@ function Filtro_Evento() {
                                         ))
                                     ) : filter.label === 'Estado' ? (
                                         filter.options.map((option, idx) => (
-                                            <div key={idx}>
+                                            <div className={styles.filtro}key={idx}>
                                                 <input
                                                     type="radio"
                                                     id={`state-${option}`}
@@ -168,7 +168,7 @@ function Filtro_Evento() {
                                         ))
                                     ) : filter.label === 'Cidade' ? (
                                         filter.options.map((option, idx) => (
-                                            <div key={idx}>
+                                            <div className={styles.filtro} key={idx}>
                                                 <input
                                                     type="checkbox"
                                                     id={`city-${option}`}
@@ -192,7 +192,7 @@ function Filtro_Evento() {
                                         </div>
                                     ) : (
                                         filter.options.map((option, idx) => (
-                                            <div key={idx}>
+                                            <div className={styles.filtro} key={idx}>
                                                 <input
                                                     type="checkbox"
                                                     id={`${filter.label}-${option}`}
@@ -211,7 +211,7 @@ function Filtro_Evento() {
                 <div className={styles.containerbutton}>
                     <button
                         onClick={handleFilterClickCriar}
-                    >Filtrar
+                    >Adicionar filtros
                     </button>
                 </div>
 
