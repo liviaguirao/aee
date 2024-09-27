@@ -34,7 +34,7 @@ function Pre_visual() {
             ) : (
               <p>Nenhuma imagem foi anexada</p>
             )}
-            <p>{texto}</p>
+            <p className="texto-formatado">{texto}</p>
           </div>
 
 

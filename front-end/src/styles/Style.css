@@ -230,3 +230,11 @@ textarea {
   justify-content: center;
   font-size: 1.7rem;
 }
+
+.texto-formatado {
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+}
