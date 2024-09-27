@@ -30,17 +30,19 @@
     background: transparent;
     color: #820B8A;
     border: none;
-    width: 15%;
+    width: 50%;
     margin: 0;
     height: 3%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .containerP button:hover{
     color: rgb(251, 0, 255);
 }
 .publicação .profile{
     display: flex;
-    height: 9%;
     padding: 1.5%;
     align-items: center;
     gap: 3%;

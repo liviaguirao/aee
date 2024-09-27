@@ -11,10 +11,31 @@ function CriarConta() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Nome:', nome);
-        console.log('Email:', email);
-        console.log('Senha:', senha);
-        navigate('/');
+       
+        fetch('http://localhost:8080/criar-conta', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Define o tipo de conteúdo como JSON
+            },
+            body: JSON.stringify({
+                identificador: nome,
+                email: email,
+                senha: senha,
+            }),
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro na criação da conta');
+            }
+            return response.json(); // Supondo que o servidor retorne uma resposta JSON
+        })
+        .then((data) => {
+            console.log('Sucesso:', data);
+            navigate('/'); // Redireciona após o sucesso
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        });
         // Aqui você pode adicionar a lógica de criação de conta (como integração com um backend)
     };
 

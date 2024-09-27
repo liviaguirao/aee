@@ -12,7 +12,29 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/pagina-inicial'); 
+    fetch('http://localhost:8080/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        senha: senha
+      })
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Usuario nao encontrado');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data); // Verifique aqui as informações retornadas
+        navigate('/pagina-inicial');
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
     // Lógica de autenticação aqui
   };
 
@@ -58,7 +80,7 @@ function Login() {
           Criar conta
         </motion.button>
       </div>
-      
+
       <div className={styles.container}>
         <img src={logo} alt="Logo" />
         <p className={styles.escrito1}>Encontre o artista perfeito para o seu evento. E artista, mostre seu talento para o mundo!</p>
