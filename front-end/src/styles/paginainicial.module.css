@@ -1,12 +1,14 @@
 .container{
     display: flex;
     width: 70%;
-    justify-content: center;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
+    flex-direction: column;
+    align-items: center;
 }
 .container .filtro{
     display: flex;
-    width: 90%;
+    width: 95%;
     height: 20%;
     border-bottom: dashed #FF0054;;
     justify-content: space-around;
@@ -28,7 +30,45 @@
     transform: scale(1.05); /* Aumenta o tamanho em 20% ao passar o mouse */
     transition: 0.3s;
 }
+
+.container .publicacoes{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .container1{
     width: 21%;
-
 }
+.containermax{
+    width: 100%;
+    height: 100vh; /* altura total da viewport */
+    overflow-y: auto; /* permite rolagem vertical */
+}
+
+
+.scrollToTop {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #820B8A;
+    color: white;
+    padding: 1%;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.658);
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.scrollToTop:hover {
+    opacity: 1;
+}
+
