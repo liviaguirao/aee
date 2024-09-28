@@ -25,9 +25,30 @@ const SearchModal = ({ isOpen, onClose, recentSearches, setRecentSearches }) => 
         'Mariana Soares',
     ];
 
+    const [userData, setUserData] = useState([]);
+
+    // Simulando a requisição ao backend
+    useEffect(() => {
+        fetch('http://localhost:8080/user', {
+            method: 'GET',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao recuperar dados');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setUserData(data); // Armazenando os dados no estado
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+    }, []);
+
     // Filtrar perfis com base no termo de pesquisa
-    const filteredProfiles = profiles.filter(profile =>
-        profile.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredProfiles = userData.filter(user =>
+        user.nome && user.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     // Função para navegar para a página do perfil
@@ -63,15 +84,15 @@ const SearchModal = ({ isOpen, onClose, recentSearches, setRecentSearches }) => 
 
                 {searchTerm && filteredProfiles.length > 0 ? (
                     <ul className={styles.listaPerfil}>
-                        {filteredProfiles.map((profile, index) => (
-                            <li key={index} onClick={() => handleProfileClick(profile)}>
+                        {filteredProfiles.map((user, index) => (
+                            <li key={index} onClick={() => handleProfileClick(user)}>
                                 <div className={styles.container}>
                                     <img
-                                        src="https://media.istockphoto.com/id/1386479313/pt/foto/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=rzUSobX0RTFPksl6-Pl28C5itfvrW3mug6NkFW7kPeQ="
+                                        src={user.foto || "default_image_url"} // Substitua com a URL padrão ou obtenha do user
                                         alt="fotoPerfil" />
-                                    {profile}
+                                    {user.nome}
                                 </div>
-                                <p>artista</p>
+                                <p>{user.bio || 'artista'}</p>
                             </li>
                         ))}
                     </ul>
@@ -84,19 +105,20 @@ const SearchModal = ({ isOpen, onClose, recentSearches, setRecentSearches }) => 
                                     <li key={index} onClick={() => handleProfileClick(search)}>
                                         <div className={styles.container}>
                                             <img
-                                                src="https://media.istockphoto.com/id/1386479313/pt/foto/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=rzUSobX0RTFPksl6-Pl28C5itfvrW3mug6NkFW7kPeQ="
+                                                src={search.foto || "default_image_url"} // Usar a foto do objeto
                                                 alt="fotoPerfil" />
-                                            {search}
+                                            {search.nome}
                                         </div>
-                                        <p>artista</p>
+                                        <p>{search.bio || 'artista'}</p> {/* Usar a bio do objeto */}
                                     </li>
                                 ))
                             ) : (
-                                <li></li>
+                                <li>Nenhuma pesquisa recente encontrada.</li>
                             )}
                         </ul>
                     </>
                 )}
+
                 {recentSearches.length > 0 && (
                     <button onClick={resetRecentSearches} className={styles.resetButton}>
                         Resetar Pesquisas Recentes
@@ -115,6 +137,13 @@ function Navbar({ filtroSelecionado }) {
         const savedSearches = localStorage.getItem('recentSearches');
         return savedSearches ? JSON.parse(savedSearches) : []; // Recuperar do localStorage
     });
+
+    useEffect(() => {
+        const savedSearches = localStorage.getItem('recentSearches');
+        console.log('Saved Searches:', savedSearches); // Para verificar o conteúdo armazenado
+        setRecentSearches(savedSearches ? JSON.parse(savedSearches) : []); // Recupera do localStorage
+    }, []);
+    
     const [filtros, setFiltros] = useState("");
 
     useEffect(() => {
@@ -122,7 +151,7 @@ function Navbar({ filtroSelecionado }) {
             setFiltros('/filtros-artistas'); // Aqui você define os filtros específicos de artista
         } else if (filtroSelecionado === 'Evento') {
             setFiltros('/filtros-eventos'); // Aqui os filtros específicos de evento
-        }else{
+        } else {
             setFiltros('/filtros-eventos');
         }
     }, [filtroSelecionado]);

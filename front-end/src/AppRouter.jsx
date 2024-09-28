@@ -6,6 +6,11 @@ import Filtro_Artista from './pages/Filtro_Artista';
 import Filtro_Evento from './pages/Filtro_evento';
 import PaginaInicial from './pages/PaginaInicial';
 import Perfil from './pages/Perfil';
+import Criar_publicacao from './pages/Criar_publicacao';
+import Sel_filtros from './pages/Sel_filtros';
+import Filtro_artista from './pages/FiltroDaPubliartista';
+import Filtro_evento from './pages/FiltroDaPublievento';
+import Pre_visual from './pages/Pre_visual';
 
 const pageAnimation = {
   initial: { opacity: 0 }, // Inicialmente invisível
@@ -42,24 +47,31 @@ function AppRouter() {
             }
           />
           <Route
-            path="/filtros-eventos"
+            path="/pagina-inicial/filtros-eventos"
             element={
                 <Filtro_Evento />
             }
           />
           <Route
-            path="/filtros-artistas"
+            path="/pagina-inicial/filtros-artistas"
             element={
                 <Filtro_Artista />
             }
           />
           <Route
-            path="/perfil"
+            path="/pagina-inicial/perfil"
             element={
                 <Perfil name="Marcelo" age={`20`} city="Juiz de Fora" art="Musica" about="Nao tinha medo o tal Joao de santo cristo era o que todos diziam quando ele se perdeu" />
             }
           />
+          <Route path="/pagina-inicial/criar-publicação" element={<Criar_publicacao />} />
+          <Route path="/pagina-inicial/criar-publicação/filtros" element={<Sel_filtros />} />
+          <Route path="/pagina-inicial/criar-publicação/filtros/filtro_artista" element={<Filtro_artista />} />
+          <Route path="/pagina-inicial/criar-publicação/filtros/filtro_evento" element={<Filtro_evento />} />
+          <Route path="/pagina-inicial/criar-publicação/pre_visual" element={<Pre_visual />} />
+          
         </Routes>
+        
       </AnimatePresence>
     </Router>
   );

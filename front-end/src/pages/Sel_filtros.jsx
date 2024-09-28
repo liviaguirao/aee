@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import '../styles/App.css'
 import '../styles/Style.css'
 import Navbar from '../components/navbar';
 
@@ -7,15 +6,15 @@ function Sel_filtros() {
   const navigate = useNavigate();
 
   function handleFilterClick_artista() {
-    navigate('/filtro_artista');
+    navigate('/pagina-inicial/criar-publicação/filtros/filtro_artista');
   }
 
   function handleFilterClick_evento() {
-    navigate('/filtro_evento');
+    navigate('/pagina-inicial/criar-publicação/filtros/filtro_evento');
   }
 
   function handleFilterClick_voltar() {
-    navigate('/');
+    navigate('/pagina-inicial/criar-publicação');
   }
 
   return (

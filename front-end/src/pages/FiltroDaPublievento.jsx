@@ -49,7 +49,7 @@ function Filtro_Evento() {
 
     const handleFilterClickCriar = () => {
         console.log("Filtros Selecionados:", filters); // Adiciona um console.log
-        navigate('/', { state: filters });
+        navigate('/pagina-inicial/criar-publicação', { state: filters });
     };
 
     const handleExpandFilter = (filter) => {

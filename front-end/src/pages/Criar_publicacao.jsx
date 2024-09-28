@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
-import '../styles/App.css'
 import '../styles/Style.css'
 import Navbar from '../components/navbar';
 
@@ -52,6 +51,8 @@ function Criar_publicacao() {
     setTexto('');
     setImagem(null);
     setShowPopup(false);
+    navigate('/pagina-inicial');
+
   };
 
   const handleClosePopup = () => {
@@ -77,11 +78,11 @@ function Criar_publicacao() {
   );
 
   function handleFilterClick_filtros() {
-    navigate('/filtros');
+    navigate('/pagina-inicial/criar-publicação/filtros');
   }
 
   function handleFilterClick_pre() {
-    navigate('/pre_visual', { state: { texto, imagem } });
+    navigate('/pagina-inicial/criar-publicação/pre_visual', { state: { texto, imagem } });
   }
 
   return (
@@ -111,7 +112,7 @@ function Criar_publicacao() {
           </div>
           <div className='botoes1'>
 
-            <Button text="Visualizar Anexo" onClick={handleFilterClick_pre} className="button-pre" />
+            <Button text="Avançar" onClick={handleFilterClick_pre} className="button-pre" />
             <Button text="Cancelar" onClick={() => setShowPopup(true)} className="button-cancelar" />
             {showPopup && <Popup onConfirm={handleCancel} onClose={handleClosePopup} />}
           </div>
