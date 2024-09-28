@@ -13,18 +13,6 @@ const SearchModal = ({ isOpen, onClose, recentSearches, setRecentSearches }) => 
     const navigate = useNavigate(); // Hook para navegação
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Lista de perfis simulada (substitua pelos dados reais)
-    const profiles = [
-        'João Silva',
-        'Maria Oliveira',
-        'Pedro Santos',
-        'Ana Costa',
-        'Lucas Pereira',
-        'Julia Almeida',
-        'Rafael Lima',
-        'Mariana Soares',
-    ];
-
     const [userData, setUserData] = useState([]);
 
     // Simulando a requisição ao backend
@@ -148,11 +136,11 @@ function Navbar({ filtroSelecionado }) {
 
     useEffect(() => {
         if (filtroSelecionado === 'Artista') {
-            setFiltros('/filtros-artistas'); // Aqui você define os filtros específicos de artista
+            setFiltros('/pagina-inicial/criar-publicação/filtros/filtro_artista'); // Aqui você define os filtros específicos de artista
         } else if (filtroSelecionado === 'Evento') {
-            setFiltros('/filtros-eventos'); // Aqui os filtros específicos de evento
+            setFiltros('/pagina-inicial/criar-publicação/filtros/filtro_evento'); // Aqui os filtros específicos de evento
         } else {
-            setFiltros('/filtros-eventos');
+            setFiltros('/pagina-inicial/criar-publicação/filtros/filtro_evento');
         }
     }, [filtroSelecionado]);
 
@@ -167,7 +155,7 @@ function Navbar({ filtroSelecionado }) {
                     src="https://media.istockphoto.com/id/1386479313/pt/foto/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=rzUSobX0RTFPksl6-Pl28C5itfvrW3mug6NkFW7kPeQ="
                     alt="Foto de Perfil"
                     className={styles.profileImg}
-                    onClick={() => handleNavigate('/perfil')}
+                    onClick={() => handleNavigate('/pagina-inicial/perfil')}
                 />
             </div>
 
@@ -185,14 +173,14 @@ function Navbar({ filtroSelecionado }) {
                     <FaSearch />
                 </li>
                 <li
-                    onClick={() => handleNavigate('/agenda')}
+                    onClick={() => handleNavigate('/pagina-inicial/agenda')}
                     className={location.pathname === '/agenda' ? styles.active : ''}
                 >
                     <FaCalendarAlt />
                 </li>
                 <li
-                    onClick={() => handleNavigate('/criar-publicação')}
-                    className={location.pathname === '/criar-publicação' ? styles.active : ''}
+                    onClick={() => handleNavigate('/pagina-inicial/criar-publicação')}
+                    className={location.pathname === '/pagina-inicial/criar-publicação' ? styles.active : ''}
                 >
                     <MdAddCard />
                 </li>
