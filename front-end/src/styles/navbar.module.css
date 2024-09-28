@@ -30,8 +30,8 @@ nav {
 }
 .menu li{
     display: flex;
-    height: 3rem;
-    width: 3rem;
+    height: 6vw;
+    width: 4vw;
     background: #FF5400;
     align-items: center;
     justify-content: center;
