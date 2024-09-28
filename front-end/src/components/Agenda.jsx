@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "moment/locale/pt-br";  // Importa o idioma português para o moment.js
+import "moment/locale/pt-br"; // Importa o idioma português para o moment.js
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Navbar from "./navbar";
 
@@ -36,15 +36,15 @@ function Agenda() {
 
   const eventStyleGetter = (event) => {
     const isHovered = event.id === hoveredEventId;
-    const backgroundColor = isHovered ? '#FF5400' : event.color || '#820B8A';
+    const backgroundColor = isHovered ? "#FF5400" : event.color || "#820B8A";
     return {
       style: {
-        backgroundColor, 
-        color: 'white', // Cor do texto dentro do evento
-        borderRadius: '10px', 
-        border: 'none',
-        transition: 'background-color 0.3s ease'  // Suaviza a transição da cor ao passar o mouse
-      }
+        backgroundColor,
+        color: "white", // Cor do texto dentro do evento
+        borderRadius: "10px",
+        border: "none",
+        transition: "background-color 0.3s ease", // Suaviza a transição da cor ao passar o mouse
+      },
     };
   };
 
@@ -52,14 +52,18 @@ function Agenda() {
     <div className="app-layout">
       {/* Navbar persistente */}
       <Navbar />
-  
+
       <div className="agenda">
         {/* Cabeçalho */}
         <div className="header-agenda">
           <h1>AGENDA</h1>
-          <button className="create-event-btn"><h3>Criar Novo <br /> Evento</h3></button>
+          <button className="create-event-btn">
+            <h3>
+              Criar Novo <br /> Evento
+            </h3>
+          </button>
         </div>
-  
+
         {/* Próximos eventos */}
         <div className="upcoming-events">
           <h5>Próximos eventos</h5>
@@ -69,26 +73,25 @@ function Agenda() {
             ))}
           </ul>
         </div>
-  
+
         {/* Calendário usando react-big-calendar */}
         <div className="calendar-container">
-          
           <Calendar
             localizer={localizer}
             events={events}
             startAccessor="start"
             endAccessor="end"
             style={{ height: "100%" }}
+            culture={"pt-br"}
             eventPropGetter={eventStyleGetter}
-            onSelectEvent={(event) => alert(event.title)}  // Exemplo de ação no clique
-            onMouseOver={(event) => setHoveredEventId(event.id)}  // Define o evento ao passar o mouse
-            onMouseOut={() => setHoveredEventId(null)}  // Reseta o hover ao tirar o mouse
+            onSelectEvent={(event) => alert(event.title)} // Exemplo de ação no clique
+            onMouseOver={(event) => setHoveredEventId(event.id)} // Define o evento ao passar o mouse
+            onMouseOut={() => setHoveredEventId(null)} // Reseta o hover ao tirar o mouse
           />
         </div>
       </div>
     </div>
   );
-  
 }
 
 export default Agenda;
