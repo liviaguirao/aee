@@ -12,6 +12,7 @@ moment.locale("pt-br");
 const localizer = momentLocalizer(moment);
 
 function Agenda() {
+  const [hoveredEventId, setHoveredEventId] = useState(null);
   const [events, setEvents] = useState([
     {
       title: "Forró do Titão",
@@ -32,6 +33,20 @@ function Agenda() {
       allDay: false,
     },
   ]);
+
+  const eventStyleGetter = (event) => {
+    const isHovered = event.id === hoveredEventId;
+    const backgroundColor = isHovered ? '#FF5400' : event.color || '#820B8A';
+    return {
+      style: {
+        backgroundColor, 
+        color: 'white', // Cor do texto dentro do evento
+        borderRadius: '10px', 
+        border: 'none',
+        transition: 'background-color 0.3s ease'  // Suaviza a transição da cor ao passar o mouse
+      }
+    };
+  };
 
   return (
     <div className="app-layout">
@@ -64,6 +79,10 @@ function Agenda() {
             startAccessor="start"
             endAccessor="end"
             style={{ height: "100%" }}
+            eventPropGetter={eventStyleGetter}
+            onSelectEvent={(event) => alert(event.title)}  // Exemplo de ação no clique
+            onMouseOver={(event) => setHoveredEventId(event.id)}  // Define o evento ao passar o mouse
+            onMouseOut={() => setHoveredEventId(null)}  // Reseta o hover ao tirar o mouse
           />
         </div>
       </div>
