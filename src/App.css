@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #FFFFFF; /* Mantido */
+  background-color: #FFFFFF; 
 }
 
 .profile {
@@ -18,7 +18,7 @@ body {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 3px solid white;
 }
 
 .menu {
@@ -52,16 +52,16 @@ body {
   justify-content: flex-start;
 }
 
-.header {
+.header-agenda {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: 25px;
 }
 
-.header h1 {
+.header-agenda h1 {
   font-size: 28px;
-  color: #000000;
+  color: black;
 }
 
 .create-event-btn {
@@ -70,13 +70,14 @@ body {
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
-  font-size: 22px;
+  font-size: 32px;
   transition: background-color 0.3s ease;
-  margin-top: 100%;
+  margin-top: 600px;
   background-color: #820B8A; /* Cor roxa */
-  border-radius: 30px; /* Borda arredondada */
-  margin-left: 75px;
+  border-radius: 15px; /* Borda arredondada */
+  margin-right: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
 }
 
 .create-event-btn:hover {
@@ -89,23 +90,24 @@ body {
   display: flex;
   width: 91%;
   height: 85px;
-  background: linear-gradient(90deg, #6D0A9B 0%, #FA2F84 49.5%, #F58C2B 100%);
+  background: linear-gradient(90deg, #FF5400 0%, #FF0054 49.5%, #820B8A 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* Estilos específicos para o calendário */
 .calendar-container {
   width: 60%;
-  margin-left: auto; /* Alinha o calendário à direita */
+  margin-left: 200px; /* Alinha o calendário à direita */
   margin-right: 20px; /* Espaço entre o calendário e a borda da tela */
   height: 85vh; /* Usa 85% da altura da tela para melhor visualização */
-  background-color: #ffffff;
+  background-color: transparent;
   border-radius: 10px;
   padding: 20px;
   margin-top: 120px;
   display: flex;
   flex-direction: column;
 }
+
 
 /* RBC Toolbar */
 .rbc-toolbar {
@@ -115,7 +117,7 @@ body {
 
 .rbc-toolbar-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   color: #820B8A;
 }
 
@@ -160,7 +162,7 @@ body {
 
 .rbc-button-link:hover {
   transform: scale(1.05);
-  transition: 0.1s; /* Muda a cor de fundo ao passar o mouse */
+  transition: 0.1s; 
 }
 
 /* Month View and Events */
@@ -172,18 +174,33 @@ body {
   background-color: #f4f4f4;
 }
 
+.rbc-day-bg.rbc-today{
+  background-color: #ff007f;
+  opacity: 0.15;
+}
+
+.rbc-day-bg.rbc-off-range-bg{
+  background-color: white;
+}
+
+.rbc-day-bg.rbc-off-range-bg:hover{
+  background-color: #f4f4f4;
+}
+
 .rbc-event {
-  background-color: #FF007F;
+  background-color: #820B8A;
   border-radius: 10px;
   padding: 5px;
   font-family: 'Poppins', sans-serif;
 }
 
 .rbc-event:hover {
-  background-color: #f58c2b;
+  background-color: #FF5400;
 }
 
-/* Other Calendar Styles */
+.rbc-events-contender{
+  background-color: black;
+}
 .rbc-today {
   background-color: #fce3f4;
 }
@@ -192,50 +209,55 @@ body {
   background-color: #f1f1f1;
 }
 
-/* Estilos para eventos futuros */
-.upcoming-events {
-  margin-top: 500px;
-  margin-left: -250px;
+.rbc-agenda-table{
+  color: black;
 }
 
-/* Estilos para o título "Próximos eventos" */
-.upcoming-events h3 {
+/* Estilos para Próximo Eventos */
+.upcoming-events {
+  margin-top: 600px;
+  margin-left: -268px;
+}
+
+
+.upcoming-events h5 {
   font-size: 22px;
   color: white;
-  background-color: #820B8A; /* Cor roxa */
+  background-color: #820B8A; 
   padding: 10px 20px;
-  border-radius: 30px; /* Borda arredondada */
+  border-radius: 30px; 
   text-align: center;
-  display: inline-block; /* Faz o fundo se ajustar ao conteúdo */
-  margin-bottom: 20px; /* Espaçamento entre o título e a lista */
+  display: inline-block;
+  margin-bottom: 20px; 
   white-space: nowrap;
+  transition: margin-top 0.3s;
 }
 
-/* Remove marcadores da lista */
+
 .upcoming-events ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Estilos para os itens da lista */
+
 .upcoming-events li {
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente */
+  align-items: center; 
   margin: 10px 0;
   font-size: 16px;
-  color: #333;
+  color: black;
 }
 
-/* Estilos para o círculo ao lado do texto */
+
 .upcoming-events li::before {
   content: '';
-  width: 12px; /* Tamanho do círculo */
+  width: 12px; 
   height: 12px;
-  background-color: #FF007F; /* Cor do círculo (vermelho-rosa) */
-  border-radius: 50%; /* Forma circular */
+  background-color: #FF007F;
+  border-radius: 50%; 
   display: inline-block;
-  margin-right: 10px; /* Espaçamento entre o círculo e o texto */
+  margin-right: 10px; 
 }
 
 /* App Layout */
@@ -243,5 +265,9 @@ body {
   display: flex;
   height: 100vh;
   width: 100vw;
-  font-family: 'Poppins', sans-serif; /* Garante que ocupe toda a largura da tela */
+  font-family: 'Poppins', sans-serif; 
+}
+
+.rbc-event.rbc-day-slot.rbc-background-event{
+  background-color: #820B8A;
 }

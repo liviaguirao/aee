@@ -40,14 +40,14 @@ function Agenda() {
   
       <div className="agenda">
         {/* Cabeçalho */}
-        <div className="header">
+        <div className="header-agenda">
           <h1>AGENDA</h1>
-          <button className="create-event-btn"><h3>Criar Novo Evento</h3></button>
+          <button className="create-event-btn"><h3>Criar Novo <br /> Evento</h3></button>
         </div>
   
         {/* Próximos eventos */}
         <div className="upcoming-events">
-          <h3>Próximos eventos</h3>
+          <h5>Próximos eventos</h5>
           <ul>
             {events.map((event, index) => (
               <li key={index}>{event.title}</li>
@@ -57,6 +57,7 @@ function Agenda() {
   
         {/* Calendário usando react-big-calendar */}
         <div className="calendar-container">
+          
           <Calendar
             localizer={localizer}
             events={events}
