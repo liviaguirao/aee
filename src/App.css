@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: lightblue; /*#f5f5f5*/
+  background-color: #FFFFFF; /* Mantido */
 }
 
 .profile {
@@ -45,11 +45,11 @@ body {
 }
 
 .main-content {
-  width: 85%;
+  width: 100%;
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  background-color: #fff;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .header {
@@ -63,6 +63,7 @@ body {
   font-size: 28px;
   color: #000000;
 }
+
 .create-event-btn {
   padding: 10px 20px;
   background-color: #820B8A;
@@ -70,101 +71,177 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 22px;
+  transition: background-color 0.3s ease;
+  margin-top: 100%;
+  background-color: #820B8A; /* Cor roxa */
+  border-radius: 30px; /* Borda arredondada */
+  margin-left: 75px;
 }
 
 .create-event-btn:hover {
-  background-color: #a64ca6;
+  transform: scale(1.05);
+  transition: 0.4s;
 }
 
-.calendar-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px;
-}
-
-.calendar-controls button {
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  color: #820B8A;
-  cursor: pointer;
-  padding: 0 15px;
-}
-
-.calendar-controls span {
-  font-size: 18px;
-  font-weight: bold;
-  color: #820B8A;
-}
-
-
-.calendar-header {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  background-color: transparent;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  color: #820B8A;
-  margin-top: 200px;
-}
-
-.calendar-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 10px;
-}
-
-.day {
-  background-color: #f8f9fa;
-  padding: 15px;
-  text-align: center;
-  border-radius: 10px;
-  position: relative;
-  font-size: 16px;
-  color: #333;
-}
-
-.day::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ff4f99;
-  top: 5px;
-  right: 5px;
-}
-
-
-
-.upcoming-events h3 {
-  font-size: 20px;
-  color: #820B8A;
-  margin-bottom: 10px;
-}
-
-.upcoming-events ul {
-  list-style-type: none;
-}
-
-.upcoming-events li {
-  margin: 10px 0;
-  color: #333;
-  font-size: 16px;
-}
+/* Mantendo o estilo da .agenda como está */
 .agenda {
   display: flex;
-  width: 93%;
+  width: 91%;
   height: 85px;
-  opacity: 0.8;
   background: linear-gradient(90deg, #6D0A9B 0%, #FA2F84 49.5%, #F58C2B 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+/* Estilos específicos para o calendário */
 .calendar-container {
-  width: 60%; /* Ajuste conforme necessário */
-  margin-left: 20px; /* Para afastar do conteúdo à esquerda */
+  width: 60%;
+  margin-left: auto; /* Alinha o calendário à direita */
+  margin-right: 20px; /* Espaço entre o calendário e a borda da tela */
+  height: 85vh; /* Usa 85% da altura da tela para melhor visualização */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* RBC Toolbar */
+.rbc-toolbar {
+  background-color: white;
+  padding: 10px;
+}
+
+.rbc-toolbar-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #820B8A;
+}
+
+.rbc-btn-group > button {
+  background-color: #820B8A;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.rbc-btn-group > button:hover {
+  background-color: #820B8A;
+}
+
+/* Headers, Cells, and Links */
+.rbc-header {
+  background-color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  color: #820B8A;
+  padding: 10px 0;
+}
+
+.rbc-day-cell {
+  color: black;
+  background-color: black;
+}
+
+.rbc-date-cell {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+.rbc-button-link {
+  cursor: pointer; /* Garante que todo o quadrado tenha o cursor de "clique" */
+  transition: background-color 0.2s ease; /* Adiciona uma pequena transição */
+}
+
+.rbc-button-link:hover {
+  transform: scale(1.05);
+  transition: 0.1s; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Month View and Events */
+.rbc-month-view {
+  background-color: white;
+}
+
+.rbc-day-bg:hover {
+  background-color: #f4f4f4;
+}
+
+.rbc-event {
+  background-color: #FF007F;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.rbc-event:hover {
+  background-color: #f58c2b;
+}
+
+/* Other Calendar Styles */
+.rbc-today {
+  background-color: #fce3f4;
+}
+
+.rbc-off-range-bg {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para eventos futuros */
+.upcoming-events {
+  margin-top: 500px;
+  margin-left: -250px;
+}
+
+/* Estilos para o título "Próximos eventos" */
+.upcoming-events h3 {
+  font-size: 22px;
+  color: white;
+  background-color: #820B8A; /* Cor roxa */
+  padding: 10px 20px;
+  border-radius: 30px; /* Borda arredondada */
+  text-align: center;
+  display: inline-block; /* Faz o fundo se ajustar ao conteúdo */
+  margin-bottom: 20px; /* Espaçamento entre o título e a lista */
+  white-space: nowrap;
+}
+
+/* Remove marcadores da lista */
+.upcoming-events ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para os itens da lista */
+.upcoming-events li {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente */
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Estilos para o círculo ao lado do texto */
+.upcoming-events li::before {
+  content: '';
+  width: 12px; /* Tamanho do círculo */
+  height: 12px;
+  background-color: #FF007F; /* Cor do círculo (vermelho-rosa) */
+  border-radius: 50%; /* Forma circular */
+  display: inline-block;
+  margin-right: 10px; /* Espaçamento entre o círculo e o texto */
+}
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif; /* Garante que ocupe toda a largura da tela */
 }
