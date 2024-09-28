@@ -11,6 +11,81 @@ moment.locale("pt-br");
 // Configura o localizador do calendário com moment.js
 const localizer = momentLocalizer(moment);
 
+const messages = {
+  date: 'Data',
+  time: 'Hora',
+  event: 'Evento',
+  allDay: 'Dia Todo',
+  week: 'Semana',
+  work_week: 'Semana de Trabalho',
+  day: 'Dia',
+  month: 'Mês',
+  previous: 'Anterior',
+  next: 'Próximo',
+  yesterday: 'Ontem',
+  tomorrow: 'Amanhã',
+  today: 'Hoje',
+  agenda: 'Agenda',
+  noEventsInRange: 'Não há eventos neste período.',
+  showMore: total => `+ Ver mais (${total})`,
+
+  // Traduções para os dias da semana (abreviações e nomes completos)
+  sunday: 'Domingo',
+  monday: 'Segunda-feira',
+  tuesday: 'Terça-feira',
+  wednesday: 'Quarta-feira',
+  thursday: 'Quinta-feira',
+  friday: 'Sexta-feira',
+  saturday: 'Sábado',
+  sun: 'Dom',
+  mon: 'Seg',
+  tue: 'Ter',
+  wed: 'Qua',
+  thu: 'Qui',
+  fri: 'Sex',
+  sat: 'Sáb',
+
+  // Traduções para os meses (abreviações e nomes completos)
+  january: 'Janeiro',
+  february: 'Fevereiro',
+  march: 'Março',
+  april: 'Abril',
+  may: 'Maio',
+  june: 'Junho',
+  july: 'Julho',
+  august: 'Agosto',
+  september: 'Setembro',
+  october: 'Outubro',
+  november: 'Novembro',
+  december: 'Dezembro',
+  jan: 'Jan',
+  feb: 'Fev',
+  mar: 'Mar',
+  apr: 'Abr',
+  may: 'Mai',
+  jun: 'Jun',
+  jul: 'Jul',
+  aug: 'Ago',
+  sep: 'Set',
+  oct: 'Out',
+  nov: 'Nov',
+  dec: 'Dez'
+};
+
+const formats = {
+  dayFormat: (date, culture, localizer) =>
+    localizer.format(date, 'dddd', culture), // Exibe "Domingo", "Segunda", etc.
+  
+  weekdayFormat: (date, culture, localizer) =>
+    localizer.format(date, 'ddd', culture),  // Exibe "Dom", "Seg", etc.
+  
+  monthHeaderFormat: (date, culture, localizer) =>
+    localizer.format(date, 'MMMM YYYY', culture), // Exibe "Outubro 2024", etc.
+
+  agendaHeaderFormat: (date, culture, localizer) =>
+    localizer.format(date, 'MMMM YYYY', culture), // Exibe "Agenda de Outubro", etc.
+};
+
 function Agenda() {
   const [hoveredEventId, setHoveredEventId] = useState(null);
   const [events, setEvents] = useState([
@@ -81,12 +156,14 @@ function Agenda() {
             events={events}
             startAccessor="start"
             endAccessor="end"
+            culture={"pt-BR"}
             style={{ height: "100%" }}
-            culture={"pt-br"}
             eventPropGetter={eventStyleGetter}
             onSelectEvent={(event) => alert(event.title)} // Exemplo de ação no clique
             onMouseOver={(event) => setHoveredEventId(event.id)} // Define o evento ao passar o mouse
             onMouseOut={() => setHoveredEventId(null)} // Reseta o hover ao tirar o mouse
+            messages={messages}
+            formats={formats}
           />
         </div>
       </div>
