@@ -4,7 +4,8 @@ import Login from './pages/login'; // Importe o componente da página de login
 import CriarConta from './pages/CriarConta'; // Importe o componente da página de criar conta
 import Filtro_Artista from './pages/Filtro_Artista';
 import Filtro_Evento from './pages/Filtro_evento';
-import PaginaInicial from './pages/PaginaInicial'
+import PaginaInicial from './pages/PaginaInicial';
+import Perfil from './pages/Perfil';
 
 const pageAnimation = {
   initial: { opacity: 0 }, // Inicialmente invisível
@@ -50,6 +51,12 @@ function AppRouter() {
             path="/filtros-artistas"
             element={
                 <Filtro_Artista />
+            }
+          />
+          <Route
+            path="/perfil"
+            element={
+                <Perfil name="Marcelo" age={`20`} city="Juiz de Fora" art="Musica" about="Nao tinha medo o tal Joao de santo cristo era o que todos diziam quando ele se perdeu" />
             }
           />
         </Routes>
