@@ -1,0 +1,240 @@
+.popup-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.664);/
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.3rem;
+  gap: 5vh;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 2.5vh;
+}
+
+.pop-yes-button,
+.pop-no-button {
+  background-color: #820B8A;
+  color: white;
+  border: none;
+  padding: 2.5vh 5vh;
+  cursor: pointer;
+  border-radius: 3vh;
+  margin: 0 5vh;
+  box-shadow: 0px 4px 5px 0px rgba(255, 255, 255, 0.575);
+}
+
+.date-picker {
+  background-color: #ffffff;
+  border: 0.4vh solid #ff0054;
+  color: #000;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 3vh;
+  outline: none;
+}
+
+/* Alterando o estilo do placeholder (o texto "Selecione uma data") */
+.date-picker::placeholder {
+  color: #ff0054;
+}
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.containerCriarPublicacao {
+  display: flex;
+  width: 91%;
+  flex-direction: row;
+}
+
+.texto {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.botoes {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20%
+}
+
+.botoes1 {
+  display: flex;
+  height: 20%;
+  width: 48%;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 9%;
+}
+
+textarea {
+  padding: 3%;
+  width: 85%;
+  font-family: "Poppins", sans-serif;
+  height: 50%;
+  border: solid #820B8A;
+  border-radius: 1rem;
+}
+
+.button-base {
+  display: flex;
+  background-color: #820B8A;
+  width: 100%;
+  height: 43%;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.575);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+.button-base:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho em 20% ao passar o mouse */
+  transition: 0.4s;
+}
+
+.containerPreVisual {
+  display: flex;
+  width: 91%;
+  flex-direction: row;
+}
+
+.imagemContainer {
+  display: flex;
+  width: 0;
+  height: 0;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.textoPreVisual {
+  display: flex;
+  width: 70%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.publicacao {
+  border: solid #820B8A;
+  border-radius: 1rem;
+  padding: 3%;
+  font-family: "Poppins", sans-serif;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+
+.publicacao img {
+  max-width: 3rem;
+  max-height: 3rem;
+  object-fit: cover;
+}
+
+.texto_sel {
+  width: 91%;
+  height: 100vh;
+  gap: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.botoes2 {
+  flex-direction: row;
+  display: flex;
+  height: 13%;
+  width: 45%;
+  justify-content: space-around;
+  gap: 30%;
+  align-items: center;
+}
+
+.botoes3 {
+  display: flex;
+  width: 100%;
+  height: 75%;
+  flex-direction: column;
+  align-items: center;
+  gap: 60%;
+}
+
+.botoes3 button {
+  display: flex;
+  background-color: #820B8A;
+  width: 34%;
+  height: 100%;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.575);
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  border-width: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.botoes3 button:hover {
+  transform: scale(1.05);
+  /* Aumenta o tamanho em 20% ao passar o mouse */
+  transition: 0.4s;
+}
+
+.textopergunta {
+  height: 25%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 1.7rem;
+}
+
+.texto-formatado {
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+}
