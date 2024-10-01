@@ -1,0 +1,34 @@
+-- Tabelas
+-- Livia 
+-- criando usuarios
+CREATE TABLE
+    Usuarios (
+        identificador INT PRIMARY KEY UNIQUE AUTO_INCREMENT,
+        Senha VARCHAR(255) NOT NULL,
+        Nome VARCHAR(255),
+        Telefone VARCHAR(20) UNIQUE,
+        Email VARCHAR(255) NOT NULL UNIQUE,
+        Bio VARCHAR(255),
+        icone MEDIUMBLOB,
+        Capa MEDIUMBLOB,
+
+    );
+
+-- criando Posts
+CREATE TABLE
+    Posts (
+        Idposts INT PRIMARY KEY UNIQUE AUTO_INCREMENT,
+        Iduser INT NOT NULL,
+        Conteudo TEXT,
+        Imgpost MEDIUMBLOB,
+        FOREIGN KEY (Iduser) REFERENCES Usuarios (Iduser) ON UPDATE CASCADE ON DELETE RESTRICT
+    );
+
+-- criando Filtros
+CREATE TABLE
+    Filtros (
+        Idposts INT,
+        Filtro VARCHAR(255),
+        PRIMARY KEY (Idposts, Filtro),
+        FOREIGN KEY (Idposts) REFERENCES Posts (Idposts) ON UPDATE CASCADE ON DELETE RESTRICT
+    );

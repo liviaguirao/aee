@@ -1,0 +1,44 @@
+-- Esta consulta retorna todas as colunas (*) da tabela Usuarios para o usuário com IDUser = 1.
+-- Útil para obter todas as informações de um único usuário, como nome, telefone, e-mail, biografia, etc.
+SELECT
+    *
+FROM
+    Usuarios
+WHERE
+    IDUser = 1;
+
+-- Esta consulta seleciona todos os posts criados por um usuário específico com IDUser = 1. Retorna todos os detalhes do post
+-- incluindo o conteúdo e qualquer imagem associada.
+SELECT
+    *
+FROM
+    Posts
+WHERE
+    IDUser = 1;
+
+-- Esta consulta retorna todos os posts junto com os filtros aplicados a eles. Utiliza um LEFT JOIN para garantir que todos os posts sejam retornados
+--mesmo que não tenham um filtro associad
+SELECT
+    p.IDPosts,
+    p.Conteudo,
+    f.Filtro
+FROM
+    Posts p
+    LEFT JOIN Filtros f ON p.IDPosts = f.IDPosts;
+
+-- retorna todos os filtros aplicados a um post específico (identificado por IDPosts = 1). Útil para visualizar os filtros associados a um determinado post.
+SELECT
+    Filtro
+FROM
+    Filtros
+WHERE
+    IDPosts = 1;
+
+-- retorna user se senha e email bater
+SELECT
+    *
+FROM
+    Usuarios
+WHERE
+    Email = 'email_exemplo@dominio.com'
+    AND Senha = 'senha_exemplo';

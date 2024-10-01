@@ -1,0 +1,250 @@
+-- Populando a tabela Usuarios com mais registros
+INSERT INTO
+    Usuarios (
+        LoginUser,
+        Senha,
+        Nome,
+        Telefone,
+        Email,
+        Bio,
+        ImgPerfil,
+        ImgCapa
+    )
+VALUES
+    (
+        'livia_user',
+        'senha123',
+        'Livia',
+        '123456789',
+        'livia@example.com',
+        'Bio de Livia',
+        NULL,
+        NULL
+    ),
+    (
+        'joao_user',
+        'senha456',
+        'João',
+        '987654321',
+        'joao@example.com',
+        'Bio de João',
+        NULL,
+        NULL
+    ),
+    (
+        'maria_user',
+        'senha789',
+        'Maria',
+        '555555555',
+        'maria@example.com',
+        'Bio de Maria',
+        NULL,
+        NULL
+    ),
+    (
+        'ana_user',
+        'senha012',
+        'Ana',
+        '111111111',
+        'ana@example.com',
+        'Bio de Ana',
+        NULL,
+        NULL
+    ),
+    (
+        'carlos_user',
+        'senha345',
+        'Carlos',
+        '222222222',
+        'carlos@example.com',
+        'Bio de Carlos',
+        NULL,
+        NULL
+    ),
+    (
+        'beatriz_user',
+        'senha678',
+        'Beatriz',
+        '333333333',
+        'beatriz@example.com',
+        'Bio de Beatriz',
+        NULL,
+        NULL
+    ),
+    (
+        'pedro_user',
+        'senha901',
+        'Pedro',
+        '444444444',
+        'pedro@example.com',
+        'Bio de Pedro',
+        NULL,
+        NULL
+    ),
+    (
+        'lucas_user',
+        'senha234',
+        'Lucas',
+        '666666666',
+        'lucas@example.com',
+        'Bio de Lucas',
+        NULL,
+        NULL
+    ),
+    (
+        'juliana_user',
+        'senha345',
+        'Juliana',
+        '777777777',
+        'juliana@example.com',
+        'Bio de Juliana',
+        NULL,
+        NULL
+    ),
+    (
+        'rafael_user',
+        'senha678',
+        'Rafael',
+        '888888888',
+        'rafael@example.com',
+        'Bio de Rafael',
+        NULL,
+        NULL
+    ),
+    (
+        'camila_user',
+        'senha901',
+        'Camila',
+        '999999999',
+        'camila@example.com',
+        'Bio de Camila',
+        NULL,
+        NULL
+    ),
+    (
+        'bruno_user',
+        'senha112',
+        'Bruno',
+        '1010101010',
+        'bruno@example.com',
+        'Bio de Bruno',
+        NULL,
+        NULL
+    ),
+    (
+        'renata_user',
+        'senha334',
+        'Renata',
+        '2020202020',
+        'renata@example.com',
+        'Bio de Renata',
+        NULL,
+        NULL
+    ),
+    (
+        'marcos_user',
+        'senha556',
+        'Marcos',
+        '3030303030',
+        'marcos@example.com',
+        'Bio de Marcos',
+        NULL,
+        NULL
+    ),
+    (
+        'aline_user',
+        'senha778',
+        'Aline',
+        '4040404040',
+        'aline@example.com',
+        'Bio de Aline',
+        NULL,
+        NULL
+    ),
+    (
+        'tiago_user',
+        'senha990',
+        'Tiago',
+        '5050505050',
+        'tiago@example.com',
+        'Bio de Tiago',
+        NULL,
+        NULL
+    );
+
+-- Populando a tabela Posts com mais registros
+INSERT INTO
+    Posts (IDUser, Conteudo, ImgPost)
+VALUES
+    (1, 'Este é o primeiro post de Livia.', NULL),
+    (2, 'João compartilha suas ideias aqui.', NULL),
+    (3, 'Maria posta sobre suas aventuras.', NULL),
+    (1, 'Mais um post de Livia.', NULL),
+    (4, 'Ana fala sobre seu dia.', NULL),
+    (
+        5,
+        'Carlos compartilha dicas de programação.',
+        NULL
+    ),
+    (6, 'Beatriz escreve sobre moda.', NULL),
+    (7, 'Pedro posta sobre viagens.', NULL),
+    (8, 'Lucas fala sobre tecnologia.', NULL),
+    (
+        3,
+        'Maria está animada com seu novo projeto.',
+        NULL
+    ),
+    (2, 'João discute um tema importante.', NULL),
+    (5, 'Carlos ensina algo novo.', NULL),
+    (9, 'Juliana compartilha receitas.', NULL),
+    (10, 'Rafael fala sobre esportes.', NULL),
+    (11, 'Camila escreve sobre filmes.', NULL),
+    (12, 'Bruno discute música.', NULL),
+    (13, 'Renata fala sobre saúde.', NULL),
+    (14, 'Marcos compartilha sobre finanças.', NULL),
+    (15, 'Aline posta dicas de decoração.', NULL),
+    (16, 'Tiago fala sobre jogos.', NULL),
+    (1, 'Livia posta sobre um novo hobby.', NULL),
+    (3, 'Maria faz uma reflexão sobre a vida.', NULL),
+    (4, 'Ana compartilha fotos de viagens.', NULL),
+    (6, 'Beatriz discute tendências de beleza.', NULL),
+    (7, 'Pedro fala sobre novas culturas.', NULL),
+    (8, 'Lucas aborda temas de ciência.', NULL),
+    (
+        10,
+        'Rafael comenta o último jogo de futebol.',
+        NULL
+    );
+
+-- Populando a tabela Filtros com mais registros
+INSERT INTO
+    Filtros (IDPosts, Filtro)
+VALUES
+    (1, 'Filtro1'),
+    (2, 'Filtro2'),
+    (3, 'Filtro3'),
+    (1, 'Filtro4'),
+    (4, 'Filtro1'),
+    (5, 'Filtro5'),
+    (6, 'Filtro6'),
+    (7, 'Filtro7'),
+    (8, 'Filtro8'),
+    (9, 'Filtro3'),
+    (10, 'Filtro4'),
+    (11, 'Filtro2'),
+    (12, 'Filtro5'),
+    (13, 'Filtro1'),
+    (14, 'Filtro2'),
+    (15, 'Filtro6'),
+    (16, 'Filtro3'),
+    (17, 'Filtro7'),
+    (18, 'Filtro8'),
+    (19, 'Filtro1'),
+    (20, 'Filtro5'),
+    (21, 'Filtro6'),
+    (22, 'Filtro3'),
+    (23, 'Filtro4'),
+    (24, 'Filtro2'),
+    (25, 'Filtro7'),
+    (26, 'Filtro8'),
+    (27, 'Filtro1');

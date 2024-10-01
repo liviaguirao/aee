@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile {
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.menu {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  margin: 10px 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.main-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.header-agenda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 25px;
+}
+.agenda h3{
+  font-size: 1.1vw;
+}
+.agenda h5{
+  font-size: 1vw;
+}
+
+.header-agenda h1 {
+  font-size: 2vw;
+  color: black;
+}
+/* Modal de fundo */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título do modal */
+.modal-content h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  color: #820b8a;
+  margin-bottom: 20px;
+}
+
+/* Estilos para os rótulos dos campos */
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Campos de entrada */
+.modal-content input[type="text"],
+.modal-content input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+/* Botão para adicionar o evento */
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #820b8a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover nos botões */
+.modal-content button:hover {
+  background-color: #ff5400;
+}
+
+/* Botão de cancelar */
+.modal-content button:nth-child(2) {
+  background-color: #ccc;
+  color: black;
+}
+
+.modal-content button:nth-child(2):hover {
+  background-color: #999;
+}
+
+
+.create-event-btn {
+  padding: 10px 20px;
+  background-color: #820b8a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  transition: background-color 0.3s ease;
+  margin-top: 600px;
+  background-color: #820b8a; /* Cor roxa */
+  border-radius: 15px; /* Borda arredondada */
+  margin-right: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+
+.create-event-btn:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+/* Mantendo o estilo da .agenda como está */
+.agenda {
+  display: flex;
+  width: 100%;
+  height: 85px;
+  background: linear-gradient(90deg, #ff5400 0%, #ff0054 49.5%, #820b8a 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos específicos para o calendário */
+.calendar-container {
+  width: 80%;
+  margin-left: 200px; /* Alinha o calendário à direita */
+  margin-right: 20px; /* Espaço entre o calendário e a borda da tela */
+  height: 85vh; /* Usa 85% da altura da tela para melhor visualização */
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* RBC Toolbar */
+.rbc-toolbar {
+  background-color: white;
+  padding: 10px;
+}
+
+.rbc-toolbar-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  color: #820b8a;
+}
+
+.rbc-btn-group > button {
+  background-color: #820b8a;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.rbc-btn-group > button:hover {
+  background-color: #820b8a;
+}
+
+/* Headers, Cells, and Links */
+.rbc-header {
+  background-color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  color: #820b8a;
+  padding: 10px 0;
+}
+
+.rbc-day-cell {
+  color: black;
+  background-color: black;
+}
+
+.rbc-date-cell {
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+.rbc-button-link {
+  cursor: pointer; /* Garante que todo o quadrado tenha o cursor de "clique" */
+  transition: background-color 0.2s ease; /* Adiciona uma pequena transição */
+}
+
+.rbc-button-link:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
+/* Month View and Events */
+.rbc-month-view {
+  background-color: white;
+}
+
+.rbc-day-bg:hover {
+  background-color: #f4f4f4;
+}
+
+.rbc-day-bg.rbc-today {
+  background-color: #ff007f;
+  opacity: 0.15;
+}
+
+.rbc-day-bg.rbc-off-range-bg {
+  background-color: white;
+}
+
+.rbc-day-bg.rbc-off-range-bg:hover {
+  background-color: #f4f4f4;
+}
+
+.rbc-event {
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.rbc-event:hover {
+  background-color: #ff5400;
+}
+
+.rbc-events-contender {
+  background-color: black;
+}
+.rbc-today {
+  background-color: #fce3f4;
+}
+
+.rbc-off-range-bg {
+  background-color: #f1f1f1;
+}
+
+.rbc-agenda-table {
+  color: black;
+}
+
+/* Estilos para Próximo Eventos */
+.upcoming-events {
+  margin-top: 550px;
+  margin-left: -250px;
+}
+
+.upcoming-events h5 {
+  color: white;
+  background-color: #820b8a;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  transition: margin-top 0.3s;
+}
+
+.upcoming-events ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.upcoming-events li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+  color: black;
+}
+
+.upcoming-events li::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #ff007f;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 1442px) {
+  .calendar-container {
+    width: 300%;
+    margin-left: 0;
+    margin-top: 90px;
+    padding: 10px;
+  }
+  .rbc-toolbar {
+    padding: 0%;
+  }
+  .create-event-btn {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 400px;
+    white-space: nowrap;
+    margin-right: -180px;
+  }
+
+  .upcoming-events {
+    margin-left: 0;
+    margin-top: 350px;
+    width: 100%;
+  }
+
+  .upcoming-events h5 {
+    padding: 8px 15px;
+  }
+
+  .upcoming-events li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .calendar-container {
+    width: 300%;
+    margin-left: 0;
+    margin-top: 90px;
+    padding: 10px;
+  }
+
+  .create-event-btn {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 400px;
+    white-space: nowrap;
+    margin-right: -180px;
+  }
+}
+
+@media (max-width: 685px) {
+  .create-event-btn {
+    font-size: 10px;
+    padding: 8px 12px;
+    margin-right: 1px;
+    margin-left: -50px;
+  }
+
+  .upcoming-events {
+    margin-left: -110px;
+  }
+
+  .upcoming-events h5 {
+    font-size: 10px;
+  }
+
+  .upcoming-events li {
+    font-size: 10px;
+  }
+
+  @media (max-width: 685px) {
+    .create-event-btn {
+      font-size: 8px;
+      padding: 8px 12px;
+      margin-right: 0.5px;
+      margin-left: -120px;
+    }
+
+    .upcoming-events {
+      margin-left: -95px;
+    }
+
+    .upcoming-events h5 {
+      font-size: 8px;
+    }
+
+    .upcoming-events li {
+      font-size: 8px;
+    }
+  }
+}
+.rbc-ellipsis, .rbc-show-more, .rbc-row-segment .rbc-event-content, .rbc-event-label {
+  font-size: 1.5vh;
+}
